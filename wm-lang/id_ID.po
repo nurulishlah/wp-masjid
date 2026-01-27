@@ -1,0 +1,1637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Masjid\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-10 01:22+0000\n"
+"PO-Revision-Date: 2025-05-27 01:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian\n"
+"Language: id_ID\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.2; wp-6.8.1\n"
+"X-Domain: wp-masjid"
+
+#: wm-inc/wm-breadcrumb.php:150
+msgid " / Page : "
+msgstr "/ Laman :"
+
+#: wm-inc/customizer.php:147
+msgid "+62..."
+msgstr "+62..."
+
+#: wm-widgets/laporan-infaq.php:67 khalifah/wm-loop/bulan.php:123
+#: khalifah/wm-loop/bulan.php:126 khalifah/wm-loop/bulan.php:129
+msgid ",-"
+msgstr ",-"
+
+#: wm-inc/customizer.php:132
+msgid "0856..."
+msgstr "0856..."
+
+#: wm-inc/customizer.php:586
+msgid "404 Page"
+msgstr "Halaman 404"
+
+#: wm-inc/template-tags.php:494
+#, php-format
+msgid ""
+"A new version <a href=\"%s\" target=\"_blank\">WP Masjid %s</a> is available."
+" Please <a href=\"%s\">update now</a>."
+msgstr ""
+"Tersedia versi baru <a href=\"%s\" target=\"_blank\">WP Masjid %s</a>. "
+"Silahkan<a href=\"%s\">perbarui sekarang</a>."
+
+#: wm-color/coloring.php:82 wm-color/coloring.php:153 wm-color/coloring.php:218
+#: wm-color/coloring.php:413 wm-color/coloring.php:481
+#: wm-color/coloring.php:568 wm-color/coloring.php:655
+#: wm-color/coloring.php:777 wm-color/coloring.php:847
+#: wm-color/coloring.php:914 wm-color/coloring.php:983
+#: wm-color/coloring.php:1228 wm-color/coloring.php:1296
+msgid "Accent Color"
+msgstr "Warna Aksesn"
+
+#: khalifah/single-rek.php:41 masjid/single-rek.php:45
+#: khalifah/wm-loop/rekening.php:45 masjid/wm-loop/rekening.php:38
+#: wm-post/laporan/rekening.php:45
+msgid "Account Name"
+msgstr "Nama Rekening"
+
+#: wm-post/laporan/rekening.php:43
+msgid "Account Number"
+msgstr "Nomor Rekening"
+
+#: masjid/wm-loop/rekening.php:48
+msgid "Accounts not found"
+msgstr "Rekening tidak ditemukan"
+
+#: wm-post/masjid/inventaris.php:122 wm-post/masjid/lembaga.php:103
+msgid "Add New"
+msgstr "Tambah Baru"
+
+#: khalifah/index.php:10
+msgid "Add widget to WP Masjid Homepage"
+msgstr "Tambah widget untuk Beranda WP Masjid"
+
+#: wm-inc/customizer.php:88
+msgid "Address"
+msgstr "Alamat"
+
+#: khalifah/single-infaq.php:51 khalifah/single-wakaf.php:46
+#: masjid/single-wakaf.php:44 wm-widgets/laporan-infaq.php:230
+#| msgid "AMOUNT"
+msgid "Amount"
+msgstr "Jumlah"
+
+#: wm-post/laporan/infaq.php:47
+msgid "Amount (example : 1.000.000)"
+msgstr "Jumlah (contoh : 1.000.000)"
+
+#: khalifah/archive-pengumuman.php:4 wm-widgets/agenda-pengumuman.php:114
+#: wm-post/post/pengumuman.php:11 wm-post/post/pengumuman.php:12
+msgid "Announcement"
+msgstr "Pengumuman"
+
+#: khalifah/archive.php:9 khalifah/archive.php:11 khalifah/archive.php:13
+#, php-format
+msgid "Archive : %s"
+msgstr "Arsip : %s"
+
+#: wm-inc/wm-breadcrumb.php:16
+#, php-format
+msgid "Articles by %s"
+msgstr "Artikel oleh  %s"
+
+#: wm-inc/customizer.php:367 wm-inc/template-tags.php:129
+#: wm-inc/template-tags.php:197 wm-inc/template-tags.php:547
+#: wm-script/wpm-prayer.php:365
+msgid "Asr"
+msgstr "Ashar"
+
+#: wm-inc/wm-breadcrumb.php:105
+msgid "Attachment"
+msgstr "Lampiran"
+
+#: khalifah/single-perpustakaan.php:29 masjid/single-perpustakaan.php:35
+#: wm-widgets/perpustakaan.php:112 masjid/wm-loop/library.php:9
+#: wm-post/masjid/perpustakaan.php:38
+msgid "Author"
+msgstr "Penulis"
+
+#: wm-color/coloring.php:114 wm-color/coloring.php:182
+#: wm-color/coloring.php:249 wm-color/coloring.php:356
+#: wm-color/coloring.php:445 wm-color/coloring.php:1102
+#: wm-color/coloring.php:1191 wm-color/coloring.php:1259
+#: wm-color/coloring.php:1327 wm-color/coloring.php:1376
+msgid "Background"
+msgstr "Latar"
+
+#: wm-color/coloring.php:599 wm-color/coloring.php:685
+#: wm-color/coloring.php:808 wm-color/coloring.php:878
+#: wm-color/coloring.php:945 wm-color/coloring.php:1014
+msgid "Background Widget"
+msgstr "Latar Widget"
+
+#: wm-widgets/laporan-infaq.php:66 wm-widgets/laporan-infaq.php:295
+#: khalifah/wm-loop/infaq.php:45 khalifah/wm-loop/kat-infaq.php:46
+msgid "BALANCE"
+msgstr "SALDO"
+
+#: khalifah/single-rek.php:26 masjid/single-rek.php:30
+#: khalifah/wm-loop/rekening.php:28 masjid/wm-loop/rekening.php:35
+#: wm-post/laporan/rekening.php:39
+msgid "Bank / Wallet"
+msgstr "Bank / Wallet"
+
+#: wm-post/laporan/rekening.php:41
+msgid "Bank / Wallet Code"
+msgstr "Kode Bank / Wallet"
+
+#: khalifah/single-jadwal-jumat.php:40 masjid/single-jadwal-jumat.php:45
+#: wm-widgets/jadwal-jumat.php:85 wm-widgets/jadwal-jumat.php:175
+#: khalifah/wm-loop/jumat.php:32 masjid/wm-loop/jumat.php:12
+#: wm-post/jadwal/jumat.php:51
+#| msgid "BILAL"
+msgid "Bilal"
+msgstr "Bilal"
+
+#: wm-color/color-option.php:281
+msgid "Blue"
+msgstr "Biru"
+
+#: wm-color/color-option.php:417
+msgid "Blue Donker"
+msgstr "Biru Donker"
+
+#: wm-post/masjid/perpustakaan.php:24
+msgid "Book Catalog"
+msgstr "Daftar Buku"
+
+#: wm-post/masjid/perpustakaan.php:44
+msgid "Book count"
+msgstr "Jumlah buku"
+
+#: wm-widgets/perpustakaan.php:111
+msgid "Book Title"
+msgstr "Judul Buku"
+
+#: wm-color/coloring.php:376 wm-color/coloring.php:531
+#: wm-color/coloring.php:741 wm-color/coloring.php:1052
+#: wm-color/coloring.php:1140
+msgid "Box Background"
+msgstr "Latar Kotak"
+
+#: khalifah/single-inventaris.php:38 wm-post/masjid/inventaris.php:53
+msgid "Broken"
+msgstr "Rusak"
+
+#: wm-inc/template-tags.php:291 wm-inc/template-tags.php:322
+msgid "Building Area"
+msgstr "Luas Bangunan"
+
+#: wm-inc/customizer.php:52
+msgid "Building Area (m2)"
+msgstr "Luas Bangunan (m2)"
+
+#: khalifah/single-tausiyah.php:11 khalifah/single.php:11
+#: masjid/single-galeri.php:16 masjid/single-pengumuman.php:15
+#: masjid/single-tausiyah.php:15 masjid/single.php:16
+#: wm-widgets/tausiyah-terbaru.php:61 wm-widgets/tausiyah-terbaru.php:126
+msgid "By"
+msgstr "Oleh"
+
+#: khalifah/archive.php:5
+#, php-format
+msgid "Cat : %s"
+msgstr "Kat : %s"
+
+#: masjid/single-galeri.php:16 masjid/single-tausiyah.php:15
+#: masjid/single.php:16
+msgid "Category"
+msgstr "Kategori"
+
+#: wm-inc/wm-breadcrumb.php:13
+#, php-format
+msgid "Category \"%s\""
+msgstr "Kategori \"%s\""
+
+#: khalifah/wm-loop/kategori.php:7 masjid/wm-loop/kategori.php:7
+msgid "Category :"
+msgstr "Kategori :"
+
+#: wm-script/wpm-prayer.php:333
+msgid "Category not found"
+msgstr "Kategori tidak ditemukan"
+
+#: wm-inc/customizer.php:661
+msgid "Change Footer Text"
+msgstr "Ubah Teks Footer"
+
+#: wm-inc/customizer.php:552
+msgid "Change Image"
+msgstr "Ganti Gambar"
+
+#: wm-inc/customizer.php:291
+msgid "Choose calculation method"
+msgstr "Pilih metode perhitungan"
+
+#: wm-inc/customizer.php:550
+msgid "Choose Image"
+msgstr "Pilih Gambar"
+
+#: wm-inc/customizer.php:448
+msgid "Choose Layout"
+msgstr "Pilih Layout"
+
+#: wm-inc/customizer.php:449
+msgid "Choose Layout for Frontend"
+msgstr "Pilih Layout untuk Frontend"
+
+#: wm-inc/customizer.php:290
+msgid "Choose Method"
+msgstr "Pilih Metode"
+
+#: wm-inc/customizer.php:240
+msgid "Choose Source"
+msgstr "Pilih Sumber"
+
+#: wm-inc/customizer.php:241
+msgid "Choose Source for Prayer Time"
+msgstr "Pilih Sumber untuk Jadwal Sholat"
+
+#. Author of the theme
+msgid "Ciuss Creative"
+msgstr "Ciuss Creative"
+
+#: wm-color/color-option.php:145
+msgid "Classic"
+msgstr "Classic"
+
+#: khalifah/single-rek.php:31 masjid/single-rek.php:35
+#: wm-widgets/laporan-infaq.php:159 wm-widgets/laporan-infaq.php:332
+#: khalifah/wm-loop/bulan.php:167 khalifah/wm-loop/infaq.php:83
+#: khalifah/wm-loop/kat-infaq.php:84 khalifah/wm-loop/rekening.php:33
+#: khalifah/wm-loop/tahun.php:100 masjid/wm-loop/rekening.php:36
+#| msgid "CODE"
+msgid "Code"
+msgstr "Kode"
+
+#: wm-color/coloring.php:17
+msgid "Color Setting"
+msgstr "Pengaturan Warna"
+
+#: functions.php:145 functions.php:169 wm-inc/theme-comment.php:16
+msgid "Comments awaiting admin moderation"
+msgstr "Komentar menunggu persetujuan admin"
+
+#: wm-inc/customizer.php:17
+msgid "Complete mosque profile"
+msgstr "Lengkapi profile masjid"
+
+#: wm-post/laporan/infaq.php:40
+msgid ""
+"Complete the latest donation (infaq) report data below. The most recent "
+"infaq report will be displayed on the Homepage"
+msgstr ""
+"Lengkapi data laporan infaq (donasi) di bawah ini. Laporan infaq terbaru "
+"akan ditampilkan di Halaman Beranda"
+
+#: wm-post/laporan/wakaf.php:38
+msgid "Complete the latest wakaf report data below"
+msgstr "Lengkapi data laporan wakaf terbaru di bawah ini"
+
+#: khalifah/single-layanan.php:37 masjid/single-layanan.php:45
+msgid "Contact"
+msgstr "Kontak"
+
+#: wm-post/post/agenda.php:53
+msgid "Coordinator"
+msgstr "Koordinator"
+
+#: khalifah/single-inventaris.php:36 khalifah/single-perpustakaan.php:41
+#: masjid/single-perpustakaan.php:50 wm-widgets/perpustakaan.php:114
+#: wm-widgets/perpustakaan.php:169 masjid/wm-loop/library.php:11
+#: wm-post/masjid/inventaris.php:51 wm-post/masjid/inventaris.php:64
+#: wm-post/masjid/inventaris.php:84 wm-post/masjid/inventaris.php:105
+msgid "Count"
+msgstr "Jumlah"
+
+#: wm-inc/customizer.php:229 wm-widgets/petugas-harian.php:16
+#: wm-widgets/petugas-harian.php:107
+msgid "Daily Officer"
+msgstr "Petugas Harian"
+
+#: khalifah/single-infaq.php:35 khalifah/single-wakaf.php:42
+#: masjid/single-wakaf.php:39 wm-widgets/laporan-infaq.php:231
+#: masjid/wm-loop/bulan.php:29 masjid/wm-loop/infaq.php:17
+#: masjid/wm-loop/jumat.php:8 masjid/wm-loop/kat-infaq.php:26
+#: masjid/wm-loop/tahun.php:29 wm-post/jadwal/jumat.php:41
+#: wm-post/laporan/infaq.php:45 wm-post/laporan/wakaf.php:39
+#: wm-post/post/agenda.php:47
+#| msgid "DATE"
+msgid "Date"
+msgstr "Tgl"
+
+#: wm-color/color-option.php:9
+msgid "Default"
+msgstr "Default"
+
+#: wm-inc/customizer.php:545
+msgid "Default Thumbnail Post"
+msgstr "Thumbnail Pos Default"
+
+#: wm-inc/customizer.php:517 wm-inc/customizer.php:529
+msgid "Default Thumbnail Share"
+msgstr "Thumbnail bagikan Default"
+
+#: khalifah/single-infaq.php:55 masjid/wm-loop/bulan.php:30
+#: masjid/wm-loop/infaq.php:18 masjid/wm-loop/kat-infaq.php:27
+#: masjid/wm-loop/tahun.php:30
+msgid "Desc"
+msgstr "Ket"
+
+#: wm-widgets/laporan-dana.php:181 wm-post/laporan/infaq.php:51
+#: wm-post/laporan/wakaf.php:41
+msgid "Description"
+msgstr "Keterangan"
+
+#: wm-inc/customizer.php:343 wm-inc/template-tags.php:116
+#: wm-inc/template-tags.php:184 wm-inc/template-tags.php:212
+#: wm-inc/template-tags.php:225 wm-inc/template-tags.php:543
+#: wm-script/wpm-prayer.php:365
+msgid "Dhuhr"
+msgstr "Dzuhur"
+
+#: masjid/wm-loop/bulan.php:69
+msgid "Difference"
+msgstr "Selisih"
+
+#: masjid/wm-loop/bulan.php:83 masjid/wm-loop/tahun.php:83
+msgid "Difference / Remaining Funds"
+msgstr "Selisih / Dana Tersisa"
+
+#: wm-inc/customizer.php:621 wm-inc/customizer.php:632
+msgid "Download"
+msgstr "Download"
+
+#: wm-inc/customizer.php:157
+msgid "Email"
+msgstr "Email"
+
+#: wm-inc/customizer.php:162
+msgid "email@domain.com..."
+msgstr "email@domain.com..."
+
+#: wm-inc/customizer.php:114
+msgid "Embed Maps"
+msgstr "Embed Maps"
+
+#: khalifah/wm-loop/bulan.php:128 masjid/wm-loop/bulan.php:105
+msgid "End of Month Balance"
+msgstr "Saldo Tutup Bulan"
+
+#: wm-inc/wm-breadcrumb.php:17
+msgid "Error 404"
+msgstr "Error 404"
+
+#: wm-inc/customizer.php:592 wm-inc/template-tags.php:426
+msgid "Error 404 Not Found"
+msgstr "Error 404 Tidak Ditemukan"
+
+#: wm-post/laporan/infaq.php:284
+msgid "Error uploading CSV file."
+msgstr "Gagal mengunggah berkas CSV."
+
+#: khalifah/archive-event.php:4 masjid/single-event.php:26
+#: wm-post/post/agenda.php:11 wm-post/post/agenda.php:12
+msgid "Event"
+msgstr "Agenda"
+
+#: khalifah/single-event.php:11
+#, php-format
+msgid "Event : %s"
+msgstr "Agenda :: %s"
+
+#: wm-post/post/agenda.php:24
+msgid "Event Data"
+msgstr "Data Agenda"
+
+#: wm-inc/theme-event.php:21
+msgid "Event Date"
+msgstr "Tanggal Agenda"
+
+#: masjid/single-event.php:69 khalifah/wm-loop/event.php:53
+msgid "Event Expired"
+msgstr "Agenda Telah Lewat"
+
+#: masjid/single-event.php:59
+msgid "Event Info"
+msgstr "Info Agenda"
+
+#: wm-widgets/agenda-pengumuman.php:54 wm-widgets/agenda-pengumuman.php:92
+#: wm-widgets/agenda-pengumuman.php:191
+msgid "Event:"
+msgstr "Agenda:"
+
+#: wm-inc/theme-event.php:13 wm-inc/theme-event.php:35
+msgid "Expired Event"
+msgstr "Agenda Lewat"
+
+#: wm-post/laporan/infaq.php:92 wm-post/laporan/infaq.php:93
+#: wm-post/laporan/infaq.php:104
+msgid "Export Report (CSV)"
+msgstr "Ekspor Laporan (CSV)"
+
+#: wm-inc/customizer.php:172
+msgid "Facebook"
+msgstr "Facebook"
+
+#: wm-script/wpm-prayer.php:336
+msgid "Failed detected area"
+msgstr "Gagal deteksi area"
+
+#: wm-script/wpm-prayer.php:356
+msgid "Failed to retrieve data"
+msgstr "Gagal mengambil data"
+
+#: wm-script/wpm-prayer.php:371
+msgid "Failed to retrieve ID data"
+msgstr "Gagal mengambil data ID"
+
+#: wm-inc/customizer.php:319 wm-inc/template-tags.php:103
+#: wm-inc/template-tags.php:171 wm-inc/template-tags.php:535
+#: wm-script/wpm-prayer.php:365
+msgid "Fajr"
+msgstr "Subuh"
+
+#: wm-inc/customizer.php:465
+msgid "Font Setting"
+msgstr "Pengaturan Font"
+
+#: wm-inc/customizer.php:489
+msgid "Font Size"
+msgstr "Ukuran Font"
+
+#: wm-color/coloring.php:426 wm-inc/customizer.php:649
+msgid "Footer"
+msgstr "Footer"
+
+#: masjid/single-jadwal-jumat.php:18 wm-widgets/jadwal-jumat.php:68
+msgid "Friday"
+msgstr "Jum'at"
+
+#: khalifah/archive-jadwal-jumat.php:4 khalifah/single-jadwal-jumat.php:13
+#: wm-widgets/jadwal-jumat.php:16 wm-widgets/jadwal-jumat.php:202
+msgid "Friday Officer"
+msgstr "Petugas Jumat"
+
+#: wm-post/jadwal/jumat.php:11 wm-post/jadwal/jumat.php:12
+#: wm-post/jadwal/jumat.php:24
+msgid "Friday Schedule"
+msgstr "Jadwal Jumat"
+
+#: khalifah/single-infaq.php:47 khalifah/single-wakaf.php:38
+#: masjid/single-wakaf.php:34 wm-widgets/laporan-infaq.php:232
+msgid "From"
+msgstr "Asal"
+
+#: wm-post/laporan/infaq.php:49 wm-post/laporan/wakaf.php:43
+msgid "From (example : Jakarta)"
+msgstr "Asal (contoh : Jakarta)"
+
+#: khalifah/single-infaq.php:39
+msgid "Fund"
+msgstr "Dana"
+
+#: wm-post/laporan/infaq.php:43
+msgid "Funds Disbursed"
+msgstr "Dana Disalurkan"
+
+#: wm-post/laporan/infaq.php:42
+msgid "Funds Received"
+msgstr "Dana Masuk"
+
+#: khalifah/archive-galeri.php:4
+msgid "Gallery"
+msgstr "Galeri"
+
+#: wm-inc/customizer.php:273
+msgid "Get city ID from <a href=\"https://idsholat.net\">idsholat.net</a>"
+msgstr ""
+"Dapatkan ID kota dari <a href=\"https://idsholat.net\">idsholat.net</a>"
+
+#: wm-inc/customizer.php:257
+msgid "Get city ID from <a href=\"https://muslimpro.com\">muslimpro.com</a>"
+msgstr ""
+"Dapatkan ID Kota dari <a href=\"https://muslimpro.com\">muslimpro.com</a>"
+
+#: wm-inc/customizer.php:115
+msgid ""
+"Get embed code form this <a target=\"_blank\" href=\"https://ciuss.com/embed-"
+"maps/\">Video</a>"
+msgstr ""
+"Dapatkan kode embed dari <a target=\"_blank\" href=\"https://ciuss.com/embed-"
+"maps/\">Video</a>"
+
+#: wm-inc/customizer.php:477
+msgid "Global Font"
+msgstr "Font Global"
+
+#: khalifah/single-inventaris.php:37 wm-post/masjid/inventaris.php:52
+msgid "Good"
+msgstr "Bagus"
+
+#: wm-color/color-option.php:213
+msgid "Green"
+msgstr "Hijau"
+
+#: wm-widgets/jadwal-jumat.php:107
+msgid "Happy friday prayer"
+msgstr "Selamat menunaikan sholat jumat"
+
+#: wm-color/coloring.php:164
+msgid "Header"
+msgstr "Header"
+
+#: wm-inc/customizer.php:597
+msgid "Heading 404"
+msgstr "Heading 404"
+
+#: wm-color/coloring.php:704
+msgid "Heading Color"
+msgstr "Warna Heading"
+
+#: wm-inc/customizer.php:504
+msgid "Heading Font"
+msgstr "Font Heading"
+
+#: wm-inc/customizer.php:637
+msgid ""
+"Hello, I am Yayun from Ciuss Creative, the developer of the WP Masjid theme."
+"<br/><br/>Thank you for using the WP Masjid theme, which we have been "
+"developing since 2017 and continue to maintain today.<br/><br/>We kindly ask "
+"for your prayers and support to enable us to continue providing updates and "
+"support for the WP Masjid theme."
+msgstr ""
+"Perkenalkan saya Yayun dari Ciuss Creative selaku developer tema WP Masjid."
+"<br/><br/>Terima kasih telah menggunakan tema WP Masjid yang telah mulai "
+"dikembangkan sejak tahun 2017 hingga saat ini.<br/><br/>Mohon dukungan doa "
+"untuk tetap bisa memberikan support untuk tema WP Masjid"
+
+#: wm-inc/wm-breadcrumb.php:12
+msgid "Home"
+msgstr "Beranda"
+
+#: wm-post/post/agenda.php:49
+msgid "Hour"
+msgstr "Jam"
+
+#: wm-widgets/jadwal-jumat.php:115
+msgid "hour"
+msgstr "jam"
+
+#: wm-color/coloring.php:287
+msgid "Hover Color"
+msgstr "Warna Hover"
+
+#: wm-inc/customizer.php:177 wm-inc/customizer.php:192
+#: wm-inc/customizer.php:207 wm-inc/customizer.php:222
+msgid "https://..."
+msgstr "https://..."
+
+#. Author URI of the theme
+msgid "https://facebook.com/ciussgw"
+msgstr "https://facebook.com/ciussgw"
+
+#. URI of the theme
+msgid "https://wpmasjid.com"
+msgstr "https://wpmasjid.com"
+
+#: wm-color/color-option.php:553
+msgid "Hybrid 1"
+msgstr "Hybrid 1"
+
+#: wm-color/color-option.php:621
+msgid "Hybrid 2"
+msgstr "Hybrid 2"
+
+#: wm-inc/customizer.php:277
+msgid "idsholat.net ID..."
+msgstr "idsholat.net ID..."
+
+#: wm-widgets/galeri-gambar.php:16 wm-widgets/galeri-gambar.php:131
+#: wm-post/post/galeri.php:11 wm-post/post/galeri.php:12
+msgid "Image Gallery"
+msgstr "Galeri Gambar"
+
+#: khalifah/single-jadwal-jumat.php:28 masjid/single-jadwal-jumat.php:30
+#: wm-inc/customizer.php:320 wm-inc/customizer.php:344
+#: wm-inc/customizer.php:368 wm-inc/customizer.php:392
+#: wm-inc/customizer.php:416 wm-inc/template-tags.php:105
+#: wm-inc/template-tags.php:118 wm-inc/template-tags.php:131
+#: wm-inc/template-tags.php:144 wm-inc/template-tags.php:157
+#: wm-inc/template-tags.php:173 wm-inc/template-tags.php:186
+#: wm-inc/template-tags.php:199 wm-widgets/jadwal-jumat.php:73
+#: wm-widgets/jadwal-jumat.php:172 khalifah/wm-loop/jumat.php:20
+#: masjid/wm-loop/jumat.php:9 wm-post/jadwal/jumat.php:45
+#| msgid "IMAM"
+msgid "Imam"
+msgstr "Imam"
+
+#: wm-post/laporan/infaq.php:178 wm-post/laporan/infaq.php:179
+#: wm-post/laporan/infaq.php:190
+msgid "Import Report (CSV)"
+msgstr "Impor Laporan (CSV)"
+
+#: masjid/wm-loop/bulan.php:31 masjid/wm-loop/infaq.php:19
+#: masjid/wm-loop/kat-infaq.php:28 masjid/wm-loop/tahun.php:31
+msgid "In"
+msgstr "Masuk"
+
+#: khalifah/archive-rek.php:4 wm-post/laporan/rekening.php:11
+#: wm-post/laporan/rekening.php:12 wm-post/laporan/rekening.php:24
+msgid "Infaq Account"
+msgstr "Rekening Infaq"
+
+#: wm-post/theme-taxonomy.php:87
+msgid "Infaq Categories"
+msgstr "Kategori Infaq"
+
+#: wm-widgets/laporan-infaq.php:293
+msgid "INFAQ FUND BALANCE REPORT"
+msgstr "LAPORAN SALDO DANA INFAQ"
+
+#: wm-widgets/laporan-dana.php:16 wm-widgets/laporan-dana.php:171
+msgid "Infaq fund distribution report"
+msgstr "Laporan penyaluran dana Infaq"
+
+#: khalifah/archive-infaq.php:4 khalifah/single-infaq.php:13
+#: wm-widgets/laporan-infaq.php:16 wm-widgets/laporan-infaq.php:63
+#: wm-widgets/laporan-infaq.php:385 khalifah/wm-loop/bulan.php:118
+#: khalifah/wm-loop/infaq.php:42 khalifah/wm-loop/kat-infaq.php:43
+#: wm-post/laporan/infaq.php:11 wm-post/laporan/infaq.php:12
+#: wm-post/laporan/infaq.php:24
+msgid "Infaq Report"
+msgstr "Laporan Infaq"
+
+#: wm-widgets/laporan-dana.php:18 wm-widgets/laporan-dana.php:172
+msgid "Information on the infaq funds that we have distributed to date"
+msgstr "Informasi nana Infaq yang telah kami salurkan hingga saat ini"
+
+#: wm-inc/customizer.php:202
+msgid "Instagram"
+msgstr "Instagram"
+
+#: khalifah/archive-lembaga.php:4 khalifah/single-lembaga.php:10
+#: wm-post/masjid/lembaga.php:11 wm-post/masjid/lembaga.php:12
+msgid "Institution"
+msgstr "Lembaga"
+
+#: masjid/wm-loop/lembaga.php:43
+msgid "Institutions not found"
+msgstr "Lembaga tidak ditemukan"
+
+#: khalifah/archive-inventaris.php:4 khalifah/single-inventaris.php:10
+#: wm-post/masjid/inventaris.php:11 wm-post/masjid/inventaris.php:12
+msgid "Inventory"
+msgstr "Inventaris"
+
+#: khalifah/single-inventaris.php:31
+msgid "Inventory List"
+msgstr "Daftar Inventaris"
+
+#: wm-inc/customizer.php:415 wm-inc/template-tags.php:155
+#: wm-inc/template-tags.php:223 wm-inc/template-tags.php:555
+#: wm-script/wpm-prayer.php:365
+msgid "Isha"
+msgstr "Isya"
+
+#: wm-color/color-option.php:77
+msgid "Khalifah (Default)"
+msgstr "Khalifah (Default)"
+
+#: khalifah/single-jadwal-jumat.php:32 masjid/single-jadwal-jumat.php:35
+#: wm-widgets/jadwal-jumat.php:77 wm-widgets/jadwal-jumat.php:173
+#: khalifah/wm-loop/jumat.php:24 masjid/wm-loop/jumat.php:10
+#: wm-post/jadwal/jumat.php:47
+#| msgid "KHATIB"
+msgid "Khatib"
+msgstr "Khatib"
+
+#: wm-inc/customizer.php:64
+msgid "Land / Location Status"
+msgstr "Status Tanah  / Lokasi"
+
+#: wm-inc/template-tags.php:288 wm-inc/template-tags.php:319
+msgid "Land Area"
+msgstr "Luas Area"
+
+#: wm-inc/customizer.php:40
+msgid "Land Area (m2)"
+msgstr "Luas Area (m2)"
+
+#: khalifah/wm-loop/bulan.php:122
+msgid "Last Month"
+msgstr "Bulan Lalu"
+
+#: masjid/wm-loop/bulan.php:103
+msgid "Last Month Balance"
+msgstr "Saldo Bulan Lalu"
+
+#: wm-widgets/tausiyah-terbaru.php:16 wm-widgets/tausiyah-terbaru.php:187
+msgid "Latest Tausiyah"
+msgstr "Tausiyah Terbaru"
+
+#: wm-inc/customizer.php:436
+msgid "Layout Setting"
+msgstr "Pengaturan Layout"
+
+#: wm-widgets/laporan-infaq.php:393
+msgid "Left Title"
+msgstr "Judul Kiri"
+
+#: wm-widgets/laporan-infaq.php:18 wm-widgets/laporan-infaq.php:386
+msgid "Lets Give Infaq"
+msgstr "Mari Ber-Infaq"
+
+#: khalifah/archive-perpustakaan.php:4 khalifah/single-perpustakaan.php:13
+#: khalifah/single-rek.php:14 wm-widgets/perpustakaan.php:16
+#: wm-widgets/perpustakaan.php:159 wm-post/masjid/perpustakaan.php:11
+#: wm-post/masjid/perpustakaan.php:12
+msgid "Library"
+msgstr "Perpustakaan"
+
+#: wm-color/coloring.php:64
+msgid "Link Color"
+msgstr "Warna Tautan"
+
+#: masjid/single-event.php:54 wm-post/post/agenda.php:51
+msgid "Location"
+msgstr "Lokasi"
+
+#: wm-inc/template-tags.php:294 wm-inc/template-tags.php:329
+msgid "Location Status"
+msgstr "Status Lokasi"
+
+#: wm-inc/customizer.php:391 wm-inc/template-tags.php:142
+#: wm-inc/template-tags.php:551 wm-script/wpm-prayer.php:365
+msgid "Maghrib"
+msgstr "Maghrib"
+
+#: wm-color/coloring.php:230
+msgid "Main Menu"
+msgstr "Menu Utama"
+
+#: wm-inc/theme-widget.php:15
+msgid "Main Sidebar"
+msgstr "Sidebar Utama"
+
+#: wm-post/masjid/lembaga.php:24
+msgid "Management List"
+msgstr "Daftar Pengurus"
+
+#: wm-inc/customizer.php:23
+msgid "Masjid At-Taqwa"
+msgstr "Masjid At-Taqwa"
+
+#: wm-inc/customizer.php:616 wm-inc/customizer.php:626
+msgid "Meet the Developer"
+msgstr "Meet the Developer"
+
+#: wm-widgets/jadwal-jumat.php:115
+msgid "min"
+msgstr "min"
+
+#: wm-post/theme-taxonomy.php:70
+msgid "Month Period"
+msgstr "Periode Bulan"
+
+#: wm-widgets/agenda-pengumuman.php:263
+msgid "MOSQUE EVENT"
+msgstr "AGENDA MASJID"
+
+#: wm-color/coloring.php:338
+msgid "Mosque Info"
+msgstr "Info Masjid"
+
+#: masjid/wm-header/wm-contact.php:17
+msgid "Mosque Information Center"
+msgstr "Pusat Informasi Masjid"
+
+#: wm-widgets/lembaga.php:16 wm-widgets/lembaga.php:159
+msgid "Mosque Institution"
+msgstr "Lembaga Masjid"
+
+#: wm-widgets/daftar-inventaris.php:16 wm-widgets/daftar-inventaris.php:195
+msgid "Mosque Inventory"
+msgstr "Inventaris Masjid"
+
+#: wm-inc/customizer.php:28
+msgid "Mosque Name"
+msgstr "Nama Masjid"
+
+#: wm-inc/customizer.php:16
+msgid "Mosque Profile"
+msgstr "Profil Masjid"
+
+#: wm-post/masjid/layanan.php:24
+msgid "Mosque Service"
+msgstr "Layanan Masjid"
+
+#: wm-widgets/daftar-layanan.php:16 wm-widgets/daftar-layanan.php:193
+msgid "Mosque Services"
+msgstr "Layanan Masjid"
+
+#: khalifah/single-jadwal-jumat.php:36 masjid/single-jadwal-jumat.php:40
+#: wm-inc/customizer.php:331 wm-inc/customizer.php:355
+#: wm-inc/customizer.php:379 wm-inc/customizer.php:403
+#: wm-inc/customizer.php:427 wm-inc/template-tags.php:110
+#: wm-inc/template-tags.php:123 wm-inc/template-tags.php:136
+#: wm-inc/template-tags.php:149 wm-inc/template-tags.php:162
+#: wm-inc/template-tags.php:178 wm-inc/template-tags.php:191
+#: wm-inc/template-tags.php:204 wm-inc/template-tags.php:217
+#: wm-inc/template-tags.php:230 wm-widgets/jadwal-jumat.php:81
+#: wm-widgets/jadwal-jumat.php:174 khalifah/wm-loop/jumat.php:28
+#: masjid/wm-loop/jumat.php:11 wm-post/jadwal/jumat.php:49
+#| msgid "MUADZIN"
+msgid "Muadzin"
+msgstr "Muadzin"
+
+#: wm-inc/customizer.php:261
+msgid "muslimpro id..."
+msgstr "muslimpro id..."
+
+#: khalifah/single-infaq.php:43 khalifah/single-inventaris.php:35
+#: khalifah/single-takmir.php:32 khalifah/single-wakaf.php:34
+#: masjid/single-takmir.php:37 masjid/single-wakaf.php:29
+#: wm-post/masjid/inventaris.php:50 wm-post/masjid/inventaris.php:61
+#: wm-post/masjid/inventaris.php:81 wm-post/masjid/inventaris.php:102
+#: wm-post/masjid/lembaga.php:51 wm-post/masjid/lembaga.php:60
+#: wm-post/masjid/lembaga.php:74 wm-post/masjid/lembaga.php:89
+msgid "Name"
+msgstr "Nama"
+
+#: masjid/single-event.php:140 masjid/single-galeri.php:62
+#: masjid/single-infaq.php:94 masjid/single-inventaris.php:86
+#: masjid/single-jadwal-jumat.php:74 masjid/single-layanan.php:73
+#: masjid/single-lembaga.php:75 masjid/single-pengumuman.php:57
+#: masjid/single-perpustakaan.php:78 masjid/single-rek.php:74
+#: masjid/single-tausiyah.php:77 masjid/single-video.php:72
+#: masjid/single-wakaf.php:72 masjid/single.php:62
+msgid "Next"
+msgstr "Selanjutnya"
+
+#: khalifah/single-inventaris.php:34
+msgid "No"
+msgstr "No"
+
+#: khalifah/single-rek.php:36 masjid/single-rek.php:40
+#: khalifah/wm-loop/rekening.php:39 masjid/wm-loop/rekening.php:37
+msgid "Number"
+msgstr "Nomor"
+
+#: khalifah/single-layanan.php:33 masjid/single-layanan.php:40
+msgid "Officer"
+msgstr "Petugas"
+
+#: wm-post/masjid/layanan.php:37
+msgid "Officer (Name of the officer to contact)"
+msgstr "Petugas (Nama dari petugas untuk dihubungi)"
+
+#: wm-color/color-option.php:485
+msgid "Orange"
+msgstr "Orange"
+
+#: masjid/wm-loop/bulan.php:32 masjid/wm-loop/infaq.php:20
+#: masjid/wm-loop/kat-infaq.php:29 masjid/wm-loop/tahun.php:32
+msgid "Out"
+msgstr "Keluar"
+
+#: khalifah/single-perpustakaan.php:37 masjid/single-perpustakaan.php:45
+#: khalifah/wm-loop/library.php:28 masjid/wm-loop/library.php:25
+msgid "Page"
+msgstr "Laman"
+
+#: wm-post/masjid/perpustakaan.php:42
+msgid "Page count"
+msgstr "Jumlah laman"
+
+#: wm-widgets/perpustakaan.php:65 wm-widgets/perpustakaan.php:127
+msgid "Pages"
+msgstr "Halaman"
+
+#: wm-inc/customizer.php:127 wm-post/masjid/layanan.php:39
+#: wm-post/post/agenda.php:55
+msgid "Phone"
+msgstr "Telepon"
+
+#: khalifah/sidebar.php:8 masjid/sidebar.php:8
+msgid ""
+"Please add widget to this area. Login and go to Appearance > Customizer > "
+"Widget"
+msgstr ""
+"Silahkan tambahkan widget ke area ini. masuk dan pergi ke: Tampilan > "
+"Sesuaikan > Widget"
+
+#: wm-post/post/video.php:36
+msgid ""
+"Please enter the URL of the YouTube, Vimeo, or other video service providers."
+msgstr ""
+"Silahkan masukan URL dari video Youtube, Vimeo, atau dari layanan video "
+"lainnya. "
+
+#: wm-widgets/laporan-infaq.php:128 wm-widgets/laporan-infaq.php:297
+#: khalifah/wm-loop/bulan.php:136 khalifah/wm-loop/infaq.php:52
+#: khalifah/wm-loop/kat-infaq.php:53 khalifah/wm-loop/tahun.php:69
+msgid "Please give your infaq through the following account"
+msgstr "Silahkan salurkan infaq Anda melalui rekening berikut"
+
+#: khalifah/single-takmir.php:36 masjid/single-takmir.php:38
+#: wm-post/masjid/lembaga.php:52 wm-post/masjid/lembaga.php:63
+#: wm-post/masjid/lembaga.php:77 wm-post/masjid/lembaga.php:92
+#: wm-post/masjid/takmir.php:24
+msgid "Position"
+msgstr "Posisi"
+
+#: wm-post/masjid/takmir.php:35
+msgid "Position in the management structure"
+msgstr "Posisi dalam struktur kepengurusan"
+
+#: khalifah/archive.php:15
+msgid "Post Archive"
+msgstr "Arsip Pos"
+
+#: khalifah/wm-loop/event.php:69 khalifah/wm-loop/inventaris.php:45
+#: khalifah/wm-loop/jumat.php:44 khalifah/wm-loop/kategori.php:46
+#: khalifah/wm-loop/layanan.php:45 khalifah/wm-loop/lembaga.php:45
+#: khalifah/wm-loop/post.php:46 khalifah/wm-loop/rekening.php:58
+#: khalifah/wm-loop/takmir.php:42 khalifah/wm-loop/video.php:37
+#: masjid/wm-loop/kategori.php:45 masjid/wm-loop/post.php:41
+#: masjid/wm-loop/topik.php:45
+msgid "Posts not found"
+msgstr "Pos tidak ditemukan"
+
+#: wm-widgets/jadwal-jumat.php:115
+msgid "Prayer time :"
+msgstr "Waktu sholat :"
+
+#: wm-post/jadwal/jumat.php:43
+msgid "Prayer Times (example 12:05)"
+msgstr "Waktu Sholat (contoh 12.05)"
+
+#: masjid/single-event.php:130 masjid/single-galeri.php:52
+#: masjid/single-infaq.php:84 masjid/single-inventaris.php:76
+#: masjid/single-jadwal-jumat.php:64 masjid/single-layanan.php:63
+#: masjid/single-lembaga.php:65 masjid/single-pengumuman.php:47
+#: masjid/single-perpustakaan.php:68 masjid/single-rek.php:64
+#: masjid/single-tausiyah.php:67 masjid/single-video.php:62
+#: masjid/single-wakaf.php:62 masjid/single.php:52
+msgid "Prev"
+msgstr "Sebelumnya"
+
+#: khalifah/wm-header/wm-contact.php:32 khalifah/wm-loop/takmir.php:32
+#: masjid/wm-header/wm-contact.php:53
+msgid "PROFILE"
+msgstr "PROFIL"
+
+#: masjid/single-galeri.php:16 masjid/single-pengumuman.php:15
+#: masjid/single-tausiyah.php:15 masjid/single-video.php:18
+#: masjid/single.php:16
+msgid "Publish"
+msgstr "Terbit"
+
+#: khalifah/single-galeri.php:8 khalifah/single-pengumuman.php:8
+#: khalifah/single-tausiyah.php:8 khalifah/single.php:8
+#, php-format
+msgid "Publish : %s"
+msgstr "Terbit : %s"
+
+#: khalifah/single-perpustakaan.php:33 masjid/single-perpustakaan.php:40
+#: wm-widgets/perpustakaan.php:113 masjid/wm-loop/library.php:10
+#: wm-post/masjid/perpustakaan.php:40
+msgid "Publisher"
+msgstr "Penerbit"
+
+#: wm-widgets/lembaga.php:131 wm-widgets/tausiyah-terbaru.php:129
+msgid "Read more"
+msgstr "Baca lengkapnya"
+
+#: wm-color/color-option.php:349
+msgid "Red"
+msgstr "Merah"
+
+#: wm-inc/customizer.php:551
+msgid "Remove Image"
+msgstr "Hapus Gambar"
+
+#: wm-widgets/laporan-infaq.php:70
+msgid "Report"
+msgstr "Laporan"
+
+#: wm-widgets/laporan-infaq.php:395
+msgid "Right Title"
+msgstr "Judul Kanan"
+
+#: khalifah/single-infaq.php:52 wm-widgets/laporan-dana.php:68
+#: wm-widgets/laporan-dana.php:141 wm-widgets/laporan-infaq.php:67
+#: wm-widgets/laporan-infaq.php:105 wm-widgets/laporan-infaq.php:108
+#: wm-widgets/laporan-infaq.php:242 wm-widgets/laporan-infaq.php:295
+#: khalifah/wm-loop/bulan.php:42 khalifah/wm-loop/bulan.php:45
+#: khalifah/wm-loop/bulan.php:123 khalifah/wm-loop/bulan.php:126
+#: khalifah/wm-loop/bulan.php:129 khalifah/wm-loop/infaq.php:46
+#: khalifah/wm-loop/infaq.php:143 khalifah/wm-loop/infaq.php:146
+#: khalifah/wm-loop/kat-infaq.php:47 khalifah/wm-loop/kat-infaq.php:153
+#: khalifah/wm-loop/kat-infaq.php:156 khalifah/wm-loop/tahun.php:42
+#: khalifah/wm-loop/tahun.php:45 masjid/wm-loop/bulan.php:79
+#: masjid/wm-loop/bulan.php:80 masjid/wm-loop/bulan.php:86
+#: masjid/wm-loop/bulan.php:88 masjid/wm-loop/bulan.php:184
+#: masjid/wm-loop/bulan.php:188 masjid/wm-loop/bulan.php:237
+#: masjid/wm-loop/bulan.php:241 masjid/wm-loop/bulan.php:318
+#: masjid/wm-loop/bulan.php:322 masjid/wm-loop/infaq.php:52
+#: masjid/wm-loop/infaq.php:57 masjid/wm-loop/kat-infaq.php:61
+#: masjid/wm-loop/kat-infaq.php:66 masjid/wm-loop/tahun.php:64
+#: masjid/wm-loop/tahun.php:69 masjid/wm-loop/tahun.php:79
+#: masjid/wm-loop/tahun.php:80 masjid/wm-loop/tahun.php:86
+#: masjid/wm-loop/tahun.php:88
+msgid "Rp"
+msgstr "Rp"
+
+#: wm-color/coloring.php:95 wm-inc/customizer.php:563
+msgid "Running Text"
+msgstr "Teks Berjalan"
+
+#: wm-inc/customizer.php:569 wm-inc/template-tags.php:451
+msgid ""
+"Running text is configured via Appearance > Customize > WP Masjid: Settings >"
+" Layout Settings"
+msgstr ""
+"Teks berjalan dikelola melalui Tampilan > Sesuaikan > WP Masjid: Pengaturan >"
+" Pengaturan Layout"
+
+#: wm-inc/wm-breadcrumb.php:14
+#, php-format
+msgid "Search : \"%s\""
+msgstr "Csri : \"%s\""
+
+#: wm-color/coloring.php:307
+msgid "Search Background"
+msgstr "Latar Cari"
+
+#: masjid/searchform.php:4 masjid/searchform.php:5
+msgid "Search..."
+msgstr "Cari..."
+
+#: wm-widgets/jadwal-jumat.php:115
+msgid "sec"
+msgstr "detik"
+
+#: wm-widgets/agenda-pengumuman.php:200
+msgid "SEE EVENT"
+msgstr "LIHAT AGENDA"
+
+#: wm-widgets/laporan-infaq.php:345
+msgid "See Report"
+msgstr "Lihat Laporan"
+
+#: masjid/single.php:79
+msgid "Send"
+msgstr "Kirim"
+
+#: khalifah/single.php:69
+msgid "Send Comment"
+msgstr "Kirim Komentar"
+
+#: khalifah/archive-layanan.php:4 khalifah/single-layanan.php:11
+#: wm-post/masjid/layanan.php:11 wm-post/masjid/layanan.php:12
+msgid "Service"
+msgstr "Layanan"
+
+#: masjid/wm-loop/layanan.php:43
+msgid "Services not found"
+msgstr "Layanan tidak ditemukan"
+
+#: wm-inc/customizer.php:546
+msgid "Set a default thumbnail image for pos"
+msgstr "Atur sebuah gambar thumbnail default untuk pos"
+
+#: wm-inc/customizer.php:530
+msgid ""
+"Set a default thumbnail image for sharing to Facebook, Twitter, and WhatsApp"
+msgstr ""
+"Atur sebuah gambar thumbnail default untuk dibagikan ke Facebook, Twitter, "
+"dan WhatsApp"
+
+#: wm-inc/customizer.php:11
+msgid "Setting WP Masjid theme"
+msgstr "Pengaturan tema WP Masjid"
+
+#: khalifah/page.php:27 masjid/page.php:25 masjid/single-event.php:39
+#: masjid/single-galeri.php:30 masjid/single-infaq.php:31
+#: masjid/single-inventaris.php:29 masjid/single-jadwal-jumat.php:20
+#: masjid/single-layanan.php:30 masjid/single-lembaga.php:29
+#: masjid/single-pengumuman.php:28 masjid/single-perpustakaan.php:20
+#: masjid/single-rek.php:20 masjid/single-takmir.php:17
+#: masjid/single-tausiyah.php:37 masjid/single-video.php:32
+#: masjid/single-wakaf.php:19 masjid/single.php:30
+msgid "Share"
+msgstr "Bagikan"
+
+#: khalifah/page.php:28 khalifah/single-event.php:24
+#: khalifah/single-galeri.php:21 khalifah/single-infaq.php:26
+#: khalifah/single-inventaris.php:23 khalifah/single-jadwal-jumat.php:19
+#: khalifah/single-layanan.php:24 khalifah/single-lembaga.php:23
+#: khalifah/single-pengumuman.php:21 khalifah/single-perpustakaan.php:16
+#: khalifah/single-rek.php:17 khalifah/single-takmir.php:23
+#: khalifah/single-tausiyah.php:35 khalifah/single-video.php:25
+#: khalifah/single-wakaf.php:25 khalifah/single.php:24 masjid/page.php:26
+#: masjid/single-event.php:40 masjid/single-galeri.php:31
+#: masjid/single-infaq.php:32 masjid/single-inventaris.php:30
+#: masjid/single-jadwal-jumat.php:21 masjid/single-layanan.php:31
+#: masjid/single-lembaga.php:30 masjid/single-pengumuman.php:29
+#: masjid/single-perpustakaan.php:21 masjid/single-rek.php:21
+#: masjid/single-takmir.php:18 masjid/single-tausiyah.php:38
+#: masjid/single-video.php:33 masjid/single-wakaf.php:20 masjid/single.php:31
+msgid "Share to Facebook"
+msgstr "Bagikan ke Facebook"
+
+#: khalifah/page.php:31 khalifah/single-event.php:27
+#: khalifah/single-galeri.php:24 khalifah/single-infaq.php:29
+#: khalifah/single-inventaris.php:26 khalifah/single-jadwal-jumat.php:22
+#: khalifah/single-layanan.php:27 khalifah/single-lembaga.php:26
+#: khalifah/single-pengumuman.php:24 khalifah/single-perpustakaan.php:19
+#: khalifah/single-rek.php:20 khalifah/single-takmir.php:26
+#: khalifah/single-tausiyah.php:38 khalifah/single-video.php:28
+#: khalifah/single-wakaf.php:28 khalifah/single.php:27 masjid/page.php:29
+#: masjid/single-event.php:43 masjid/single-galeri.php:34
+#: masjid/single-infaq.php:35 masjid/single-inventaris.php:33
+#: masjid/single-jadwal-jumat.php:24 masjid/single-layanan.php:34
+#: masjid/single-lembaga.php:33 masjid/single-pengumuman.php:32
+#: masjid/single-perpustakaan.php:24 masjid/single-rek.php:24
+#: masjid/single-takmir.php:21 masjid/single-tausiyah.php:41
+#: masjid/single-video.php:36 masjid/single-wakaf.php:23 masjid/single.php:34
+msgid "Share to Telegram"
+msgstr "Bagikan ke Telegram"
+
+#: khalifah/page.php:29 khalifah/single-event.php:25
+#: khalifah/single-galeri.php:22 khalifah/single-infaq.php:27
+#: khalifah/single-inventaris.php:24 khalifah/single-jadwal-jumat.php:20
+#: khalifah/single-layanan.php:25 khalifah/single-lembaga.php:24
+#: khalifah/single-pengumuman.php:22 khalifah/single-perpustakaan.php:17
+#: khalifah/single-rek.php:18 khalifah/single-takmir.php:24
+#: khalifah/single-tausiyah.php:36 khalifah/single-video.php:26
+#: khalifah/single-wakaf.php:26 khalifah/single.php:25 masjid/page.php:27
+#: masjid/single-event.php:41 masjid/single-galeri.php:32
+#: masjid/single-infaq.php:33 masjid/single-inventaris.php:31
+#: masjid/single-jadwal-jumat.php:22 masjid/single-layanan.php:32
+#: masjid/single-lembaga.php:31 masjid/single-pengumuman.php:30
+#: masjid/single-perpustakaan.php:22 masjid/single-rek.php:22
+#: masjid/single-takmir.php:19 masjid/single-tausiyah.php:39
+#: masjid/single-video.php:34 masjid/single-wakaf.php:21 masjid/single.php:32
+msgid "Share to Twitter"
+msgstr "Bagikan ke Twitter"
+
+#: khalifah/page.php:30 khalifah/single-event.php:26
+#: khalifah/single-galeri.php:23 khalifah/single-infaq.php:28
+#: khalifah/single-inventaris.php:25 khalifah/single-jadwal-jumat.php:21
+#: khalifah/single-layanan.php:26 khalifah/single-lembaga.php:25
+#: khalifah/single-pengumuman.php:23 khalifah/single-perpustakaan.php:18
+#: khalifah/single-rek.php:19 khalifah/single-takmir.php:25
+#: khalifah/single-tausiyah.php:37 khalifah/single-video.php:27
+#: khalifah/single-wakaf.php:27 khalifah/single.php:26 masjid/page.php:28
+#: masjid/single-event.php:42 masjid/single-galeri.php:33
+#: masjid/single-infaq.php:34 masjid/single-inventaris.php:32
+#: masjid/single-jadwal-jumat.php:23 masjid/single-layanan.php:33
+#: masjid/single-lembaga.php:32 masjid/single-pengumuman.php:31
+#: masjid/single-perpustakaan.php:23 masjid/single-rek.php:23
+#: masjid/single-takmir.php:20 masjid/single-tausiyah.php:40
+#: masjid/single-video.php:35 masjid/single-wakaf.php:22 masjid/single.php:33
+msgid "Share to WhatsApp"
+msgstr "Bagikan ke WhatsApp"
+
+#: wm-widgets/laporan-dana.php:7 wm-widgets/laporan-dana.php:176
+msgid "Show cash out report"
+msgstr "Tampilkan laporan dana keluar"
+
+#: functions.php:62
+msgid "Show menu in Header Navigation"
+msgstr "Tampilkan menu di Navigasi Header"
+
+#: wm-post/post/slide.php:11 wm-post/post/slide.php:12
+msgid "Slide Image"
+msgstr "Gambar Slide"
+
+#: wm-post/laporan/infaq.php:271
+#, php-format
+msgid "Successfully imported %1$d report. Failed to import %2$d report."
+msgid_plural ""
+"Successfully imported %1$d reports. Failed to import %2$d reports."
+msgstr[0] "Sukses mengimpor %1$d laporan. Gagal mengimpor %2$d laporan."
+
+#: wm-inc/template-tags.php:539 wm-script/wpm-prayer.php:365
+msgid "Sunrise"
+msgstr "Terbit"
+
+#: wm-inc/wm-ciuss-news.php:23
+msgid "Support"
+msgstr "Bantuan"
+
+#: wm-color/coloring.php:618
+msgid "Table Background"
+msgstr "Latar Tabel"
+
+#: wm-inc/wm-breadcrumb.php:15
+#, php-format
+msgid "Tag \"%s\""
+msgstr "Tag \"%s\""
+
+#: khalifah/archive.php:7
+#, php-format
+msgid "Tag : %s"
+msgstr "Tag : %s"
+
+#: khalifah/archive-takmir.php:4 khalifah/single-takmir.php:10
+#: wm-post/masjid/takmir.php:11 wm-post/masjid/takmir.php:12
+msgid "Takmir"
+msgstr "Takmir"
+
+#: masjid/wm-loop/takmir.php:36
+msgid "Takmirs not found"
+msgstr "Takmir tidak ditemukan"
+
+#: khalifah/archive-tausiyah.php:4 wm-post/post/tausiyah.php:11
+#: wm-post/post/tausiyah.php:12
+msgid "Tausiyah"
+msgstr "Tausiyah"
+
+#: wm-post/theme-taxonomy.php:8
+msgid "Tausiyah Categories"
+msgstr "Kategori Tausiyah"
+
+#: wm-post/theme-taxonomy.php:29
+msgid "Tausiyah Topics"
+msgstr "Topik Tausiyah"
+
+#: wm-post/theme-taxonomy.php:85
+msgctxt "taxonomy general name"
+msgid "Infaq Categories"
+msgstr "Infaq Categories"
+
+#: wm-post/theme-taxonomy.php:68
+msgctxt "taxonomy general name"
+msgid "Month Period (example: August 2019)"
+msgstr "Periode Bulan (contoh: Agustus 2019)"
+
+#: wm-post/theme-taxonomy.php:6
+msgctxt "taxonomy general name"
+msgid "Tausiyah Categories"
+msgstr "Kategori Tausiyah"
+
+#: wm-post/theme-taxonomy.php:27
+msgctxt "taxonomy general name"
+msgid "Tausiyah Topics"
+msgstr "Topik Tausiyah"
+
+#: wm-post/theme-taxonomy.php:49
+msgctxt "taxonomy general name"
+msgid "Year Period (example: 2019)"
+msgstr "Periode Tahun (contoh: 2019)"
+
+#: wm-post/theme-taxonomy.php:86
+msgctxt "taxonomy singular name"
+msgid "Infaq Categories"
+msgstr "Infaq Categories"
+
+#: wm-post/theme-taxonomy.php:69
+msgctxt "taxonomy singular name"
+msgid "Month Period"
+msgstr "Periode Bulan"
+
+#: wm-post/theme-taxonomy.php:7
+msgctxt "taxonomy singular name"
+msgid "Tausiyah Categories"
+msgstr "Kategori Tausiyah"
+
+#: wm-post/theme-taxonomy.php:28
+msgctxt "taxonomy singular name"
+msgid "Tausiyah Topics"
+msgstr "Topik Tausiyah"
+
+#: wm-post/theme-taxonomy.php:50
+msgctxt "taxonomy singular name"
+msgid "Year Period"
+msgstr "Periode Tahun"
+
+#: wm-inc/customizer.php:608
+msgid "Text 404"
+msgstr "Teks 404"
+
+#: wm-color/coloring.php:40 wm-color/coloring.php:135 wm-color/coloring.php:200
+#: wm-color/coloring.php:268 wm-color/coloring.php:326
+#: wm-color/coloring.php:395 wm-color/coloring.php:463
+#: wm-color/coloring.php:550 wm-color/coloring.php:637
+#: wm-color/coloring.php:723 wm-color/coloring.php:759
+#: wm-color/coloring.php:829 wm-color/coloring.php:896
+#: wm-color/coloring.php:965 wm-color/coloring.php:1070
+#: wm-color/coloring.php:1159 wm-color/coloring.php:1278
+msgid "Text Color"
+msgstr "Warna Teks"
+
+#: wm-inc/customizer.php:603 wm-inc/template-tags.php:438
+msgid "The page you requested is unavailable"
+msgstr "Halaman yang Anda tuju tidak tersedia"
+
+#: wm-widgets/agenda-pengumuman.php:264 masjid/wm-loop/event.php:62
+msgid "There are no events in the near future"
+msgstr "Tidak ada event dalam waktu dekat"
+
+#: khalifah/wm-loop/bulan.php:125
+msgid "This Month"
+msgstr "Bulan Ini"
+
+#: masjid/wm-loop/bulan.php:104
+msgid "This Month Balance"
+msgstr "Saldo Bulan Ini"
+
+#: masjid/single-event.php:49
+msgid "Time"
+msgstr "Waktu"
+
+#: khalifah/single-perpustakaan.php:25 masjid/single-perpustakaan.php:30
+#: wm-widgets/daftar-inventaris.php:202 wm-widgets/daftar-layanan.php:200
+#: wm-widgets/galeri-gambar.php:138 wm-widgets/galeri-video.php:134
+#: wm-widgets/jadwal-jumat.php:209 wm-widgets/laporan-dana.php:179
+#: wm-widgets/lembaga.php:166 wm-widgets/perpustakaan.php:167
+#: wm-widgets/petugas-harian.php:114 wm-widgets/tausiyah-terbaru.php:194
+#: masjid/wm-loop/library.php:8
+msgid "Title"
+msgstr "Judul"
+
+#: wm-color/coloring.php:1034 wm-color/coloring.php:1121
+#: wm-color/coloring.php:1210 wm-color/coloring.php:1345
+#: wm-color/coloring.php:1394
+msgid "Title Color"
+msgstr "Warna Judul"
+
+#: wm-post/laporan/infaq.php:51
+msgid "to be filled if funds are disbursed"
+msgstr "diisi jika dana keluar"
+
+#: masjid/wm-loop/topik.php:7
+msgid "Topic :"
+msgstr "Topik :"
+
+#: masjid/wm-loop/bulan.php:78
+msgid "Total funds this month"
+msgstr "Total dana bulan ini"
+
+#: masjid/wm-loop/tahun.php:78
+msgid "Total funds this year"
+msgstr "Total dana tahun ini"
+
+#: wm-inc/customizer.php:187
+msgid "Twitter"
+msgstr "Twitter"
+
+#: wm-inc/theme-event.php:15
+msgid "Upcoming Event"
+msgstr "Agenda Akan Datang"
+
+#: wm-inc/customizer.php:574
+msgid ""
+"Use shortcode<br/>[spasi] for space<br/>[strong]Text[/strong]<br/>[span]"
+"Text[/span]<br/>[a link=\"https://..\"]text[/a]"
+msgstr ""
+"Gunakan shortcode<br/>[spasi] untuk spasi<br/>[strong]Teks[/strong]<br/>"
+"[span]Teks[/span]<br/>[a link=\"https://..\"]teks[/a]"
+
+#: khalifah/archive-video.php:4 khalifah/single-video.php:11
+#: wm-post/post/video.php:11 wm-post/post/video.php:12
+msgid "Video"
+msgstr "Video"
+
+#: wm-widgets/galeri-video.php:16 wm-widgets/galeri-video.php:127
+#: wm-post/post/video.php:24
+msgid "Video Gallery"
+msgstr "Galeri Video"
+
+#: functions.php:191
+msgid "Video Tutorial"
+msgstr "Video Tutorial"
+
+#: masjid/wm-loop/video.php:39
+msgid "Videos not found"
+msgstr "Video tidak ditemukan"
+
+#: khalifah/archive-wakaf.php:4 khalifah/single-wakaf.php:12
+msgid "Wakaf"
+msgstr "Wakaf"
+
+#: wm-post/laporan/wakaf.php:11 wm-post/laporan/wakaf.php:12
+#: wm-post/laporan/wakaf.php:24
+msgid "Wakaf Report"
+msgstr "Laporan Wakaf"
+
+#: masjid/wm-loop/wakaf.php:39
+msgid "Wakafs not found"
+msgstr "Wakaf tidak ditemukan"
+
+#: wm-inc/customizer.php:142
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: wm-color/coloring.php:512
+msgid "Widget Background"
+msgstr "Latar Widget"
+
+#: wm-color/coloring.php:790
+msgid "Widget Daily Officer"
+msgstr "Widget Petugas Harian"
+
+#: wm-widgets/petugas-harian.php:7 wm-widgets/petugas-harian.php:111
+msgid "Widget display Daily Officer"
+msgstr "Widget menampilkan Petugas Harian"
+
+#: wm-widgets/agenda-pengumuman.php:7 wm-widgets/agenda-pengumuman.php:318
+msgid "Widget display Event and Announcement"
+msgstr "Widget menampilkan Agenda  dan Pengumuman"
+
+#: wm-widgets/jadwal-jumat.php:7 wm-widgets/jadwal-jumat.php:206
+msgid "Widget display Friday Officer"
+msgstr "Widget menampilkan Petugas Jumat"
+
+#: wm-widgets/galeri-gambar.php:7 wm-widgets/galeri-gambar.php:135
+msgid "Widget display Image Gallery"
+msgstr "Widget menampilkan Galeri Gambar"
+
+#: wm-widgets/laporan-infaq.php:7 wm-widgets/laporan-infaq.php:390
+msgid "Widget display Infaq Report"
+msgstr "Widget menampilkan Laporan Infaq"
+
+#: wm-widgets/tausiyah-terbaru.php:7 wm-widgets/tausiyah-terbaru.php:191
+msgid "Widget display Latest Tausiyah"
+msgstr "Widget menampilkan Tausiyah Terbaru"
+
+#: wm-widgets/lembaga.php:7 wm-widgets/lembaga.php:163
+msgid "Widget display Mosque Institution"
+msgstr "Widget menampilkan Lembaga Masjid"
+
+#: wm-widgets/daftar-layanan.php:7 wm-widgets/daftar-layanan.php:197
+msgid "Widget display Mosque Services"
+msgstr "Widget menampilkan Layanan Masjid"
+
+#: wm-widgets/galeri-video.php:7 wm-widgets/galeri-video.php:131
+msgid "Widget display Video Gallery"
+msgstr "Widget menampilkan Galeri Video"
+
+#: wm-widgets/perpustakaan.php:7 wm-widgets/perpustakaan.php:164
+msgid "Widget displays book catalog in Library"
+msgstr "Widget menampailkan katalog buku di Perpustakaan"
+
+#: wm-widgets/daftar-inventaris.php:7 wm-widgets/daftar-inventaris.php:199
+msgid "Widget displays Mosque Inventory"
+msgstr "Widget menampilkan Inventaris Masjid"
+
+#: wm-color/coloring.php:494
+msgid "Widget Event & Announcement"
+msgstr "Widget Agenda & Pengumuman"
+
+#: wm-color/coloring.php:860
+msgid "Widget Friday Officer"
+msgstr "Widget Petugas Jumat"
+
+#: wm-color/coloring.php:1309
+msgid "Widget Gallery"
+msgstr "Widget Galeri"
+
+#: wm-color/coloring.php:667
+msgid "Widget Infaq Distributed"
+msgstr "Widget Infaq Disalurkan"
+
+#: wm-color/coloring.php:581
+msgid "Widget Infaq Report"
+msgstr "Widget Laporan Infaq"
+
+#: wm-color/coloring.php:1083
+msgid "Widget Institution"
+msgstr "Widget Lembaga"
+
+#: wm-color/coloring.php:1173
+msgid "Widget Inventory"
+msgstr "Widget Inventaris"
+
+#: wm-color/coloring.php:1241
+msgid "Widget Library"
+msgstr "Widget Perpustakaan"
+
+#: wm-color/coloring.php:996
+msgid "Widget Service"
+msgstr "Widget Layanan"
+
+#: wm-color/coloring.php:927
+msgid "Widget Tausiyah"
+msgstr "Widget Tausiyah"
+
+#: wm-color/coloring.php:1358
+msgid "Widget Video"
+msgstr "Widget Video"
+
+#: wm-widgets/petugas-harian.php:6
+msgid "WM : Daily Officer"
+msgstr "WM : Petugas Harian"
+
+#: wm-widgets/agenda-pengumuman.php:6
+msgid "WM : Event & Announcement"
+msgstr "WM : Agenda & Pengumuman"
+
+#: wm-widgets/jadwal-jumat.php:6
+msgid "WM : Friday Officer"
+msgstr "WM : Petugas Jumat"
+
+#: wm-widgets/galeri-gambar.php:6
+msgid "WM : Image Gallery"
+msgstr "WM : Galeri Gambar"
+
+#: wm-widgets/laporan-dana.php:6
+msgid "WM : Infaq Fund Report"
+msgstr "WM : Laporan Dana Infaq"
+
+#: wm-widgets/laporan-infaq.php:6
+msgid "WM : Infaq Report"
+msgstr "WM : Laporan Infaq"
+
+#: wm-widgets/tausiyah-terbaru.php:6
+msgid "WM : Latest Tausiyah"
+msgstr "WM : Tausiyah Terbaru"
+
+#: wm-widgets/perpustakaan.php:6
+msgid "WM : Library"
+msgstr "WM : Perpustakaan"
+
+#: wm-widgets/lembaga.php:6
+msgid "WM : Mosque Institution"
+msgstr "WM : Lembaga Masjid"
+
+#: wm-widgets/daftar-inventaris.php:6
+msgid "WM : Mosque Inventory"
+msgstr "WM : Inventaris Masjid"
+
+#: wm-widgets/daftar-layanan.php:6
+msgid "WM : Mosque Services"
+msgstr "WM : Layanan Masjid"
+
+#: wm-widgets/galeri-video.php:6
+msgid "WM : Video Gallery"
+msgstr "WM : Galeri Video"
+
+#. Name of the theme
+msgid "WP Masjid"
+msgstr "WP Masjid"
+
+#: wm-inc/customizer.php:10
+msgid "WP Masjid : Setting"
+msgstr "WP Masjid : Pengaturan"
+
+#: wm-inc/theme-widget.php:7
+msgid "WP Masjid Homepage"
+msgstr "Beranda WP Masjid"
+
+#: wm-inc/back-compat.php:14 wm-inc/back-compat.php:19
+#: wm-inc/back-compat.php:27
+msgid "WP Masjid requires at least WordPress version 5.8 or higher."
+msgstr "WP Msjid membutuhkan minimal WordPress versi 5. atau lebih tinggi."
+
+#. Description of the theme
+msgid "WP Masjid theme for Mosque website"
+msgstr "Tema WP Masjid untuk website Masjid"
+
+#: functions.php:190
+msgid "WP Masjid Tutorial Page"
+msgstr "Halaman Tutorial WP Masjid"
+
+#: khalifah/single.php:70 masjid/single.php:80
+msgid "Write Comment"
+msgstr "Tulis Komentar"
+
+#: khalifah/single.php:72 masjid/single.php:82
+msgid "write comment..."
+msgstr "tulis komentar..."
+
+#: wm-inc/customizer.php:76 wm-inc/template-tags.php:297
+#: wm-inc/template-tags.php:332
+msgid "Year Established"
+msgstr "Tahun Berdiri"
+
+#: wm-post/theme-taxonomy.php:51
+msgid "Year Period"
+msgstr "Periode Tahun"
+
+#: wm-inc/wm-breadcrumb.php:46 wm-inc/wm-breadcrumb.php:52
+msgid "You are here : "
+msgstr "Anda disini :"
+
+#: wm-inc/customizer.php:217
+msgid "Youtube"
+msgstr "Youtube"

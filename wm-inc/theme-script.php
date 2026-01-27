@@ -33,3 +33,37 @@ function wm_scripts() {
 	
 }
 add_action('wp_enqueue_scripts', 'wm_scripts');
+
+/**
+ * Enqueue owl carousel initialization script for widgets
+ * 
+ * Use this function instead of inline <script> tags in widgets.
+ * 
+ * @param string $widget_id The widget ID to use as selector
+ * @param array  $options   Owl carousel options (loop, nav, items, etc.)
+ */
+function wm_enqueue_carousel_script( $widget_id, $options = array() ) {
+	// Default carousel options
+	$defaults = array(
+		'loop'                 => true,
+		'nav'                  => false,
+		'dots'                 => false,
+		'lazyLoad'             => true,
+		'autoplay'             => true,
+		'smartSpeed'           => 1000,
+		'autoplayTimeout'      => 4000,
+		'autoplayHoverPause'   => true,
+		'margin'               => 15,
+		'items'                => 1,
+	);
+	
+	$options = wp_parse_args( $options, $defaults );
+	$options_json = wp_json_encode( $options );
+	$safe_id = esc_js( $widget_id );
+	
+	$script = "jQuery(document).ready(function($) {
+		$('." . $safe_id . "').owlCarousel(" . $options_json . ");
+	});";
+	
+	wp_add_inline_script( 'wm-owls', $script );
+}

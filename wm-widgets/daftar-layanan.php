@@ -72,23 +72,12 @@ class Layanan_Masjid extends WP_Widget {
 					?>
 				</div>
 			</div>
-			<script>
-            jQuery(document).ready(function($) {
-                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
-                owl.owlCarousel({
-                    loop: true,
-                    nav: false,
-					dots: false,
-                    lazyLoad: true,
-			    	autoplay: true,
-					smartSpeed: 1000,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-					margin: 20,
-					items:4,
-                });
-            });
-		    </script>
+			<?php
+			wm_enqueue_carousel_script( $args['widget_id'], array(
+				'margin' => 20,
+				'items'  => 4,
+			) );
+			?>
 		
 		<?php
 		} else {
@@ -145,37 +134,17 @@ class Layanan_Masjid extends WP_Widget {
 					?>
 				</div>
 			</div>
-			<script>
-            jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
-                owl.owlCarousel({
-                    loop: true,
-                    nav: false,
-					dots: false,
-                    lazyLoad: true,
-			    	autoplay: true,
-					smartSpeed: 1000,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-					margin: 20,
-					responsive:{
-                        0:{ 
-				    	    items:2,
-							margin: 10,
-                        },
-                        720:{
-                            items:2,
-                        },
-                        800:{
-                            items:3,
-                        },
-                        982:{
-                            items:4,
-                        }
-                    }
-                });
-            });
-		    </script>
+			<?php
+			wm_enqueue_carousel_script( $args['widget_id'], array(
+				'margin'     => 20,
+				'responsive' => array(
+					0   => array( 'items' => 2, 'margin' => 10 ),
+					720 => array( 'items' => 2 ),
+					800 => array( 'items' => 3 ),
+					982 => array( 'items' => 4 ),
+				),
+			) );
+			?>
 		
 		<?php		
 		}

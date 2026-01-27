@@ -62,36 +62,16 @@ class Daftar_Lembaga extends WP_Widget {
 					?>
 				</div>
 			</div>
-			<script>
-            jQuery(document).ready(function($) {
-                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
-                owl.owlCarousel({
-                    loop: true,
-                    nav: false,
-					dots: false,
-                    lazyLoad: true,
-			    	autoplay: true,
-					smartSpeed: 1000,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-					margin: 15,
-					responsive:{
-                        0:{ 
-				    	    items:2,
-                        },
-                        720:{
-                            items:3,
-                        },
-                        800:{
-                            items:4,
-                        },
-                        982:{
-                            items:5,
-                        }
-                    }
-                });
-            });
-		    </script>
+			<?php
+			wm_enqueue_carousel_script( $args['widget_id'], array(
+				'responsive' => array(
+					0   => array( 'items' => 2 ),
+					720 => array( 'items' => 3 ),
+					800 => array( 'items' => 4 ),
+					982 => array( 'items' => 5 ),
+				),
+			) );
+			?>
 
         <?php		
 		} else {

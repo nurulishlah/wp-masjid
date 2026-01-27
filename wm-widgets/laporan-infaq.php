@@ -27,37 +27,9 @@ class Laporan_infaq extends WP_Widget {
 					    <div class="saldo__in">
 					    	<div class="saldo__lap">
 						        <?php
-							    	$argu = array(
-								    	'post_type'      => 'infaq',
-										'meta_query'     => array(
-									    	array(
-										    	'key'     => '_status',
-												'compare' => 'EXISTS',
-											),
-										),
-										'posts_per_page' => 500,
-									);
-									
-									$query = new WP_Query($argu);
-									
-									$total_keluar = 0;
-									$total_masuk = 0;
-									
-									if ($query->have_posts()) :
-								    	while ($query->have_posts()) : $query->the_post();
-										$status = get_post_meta(get_the_ID(), '_status', true);
-										$jumlah_infaq = intval(str_replace(".", "", get_post_meta(get_the_ID(), '_juminfaq', true)));
-										if ($status === 'keluar') {
-											$total_keluar += $jumlah_infaq;
-										} elseif ($status === 'masuk') {
-											$total_masuk += $jumlah_infaq;
-										}
-										endwhile;
-									endif;
-									
-									$saldo_akhir = $total_masuk - $total_keluar;
-									
-									wp_reset_postdata();
+							    	// Use cached totals
+							    	$infaq_totals = wm_get_infaq_totals();
+									$saldo_akhir = $infaq_totals['saldo'];
 								?>
 								<div class="saldo__title">
 							    	<?php echo esc_html__('Infaq Report', 'wp-masjid'); ?>
@@ -178,23 +150,9 @@ class Laporan_infaq extends WP_Widget {
 				
 				</div>
 			</div>
-			<script>
-            jQuery(document).ready(function($) {
-                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
-                owl.owlCarousel({
-                    loop: true,
-                    nav: false,
-					dots: false,
-                    lazyLoad: true,
-			    	autoplay: true,
-					smartSpeed: 1000,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-					margin: 15,
-					items:1,
-                });
-            });
-		    </script>
+			<?php
+			wm_enqueue_carousel_script( $args['widget_id'], array() );
+			?>
 		
 		<?php
 		} else {
@@ -261,38 +219,15 @@ class Laporan_infaq extends WP_Widget {
 						?>
 						<div class="wm__saldo">
 						    <?php
-						    	$total_argument = array( 
-							    	'post_type' => 'infaq',
-									'meta_key' => '_status',
-									'posts_per_page' => 500,
-								);
-								$count_infaq = get_posts($total_argument);
-								$kel = 0;
-								$mas = 0;
-								foreach ( $count_infaq as $post ) {
-									$status = get_post_meta($post->ID, '_status', true);
-									if ( $status == 'keluar' ) {
-										$masuk = 0;
-										$keluar = get_post_meta($post->ID, '_juminfaq', true);
-									}
-									if ( $status == 'masuk' ) {
-										$masuk = get_post_meta($post->ID, '_juminfaq', true);
-										$keluar = 0;
-									}
-									$masu = str_replace(".","",$masuk);
-									$kelu = str_replace(".","",$keluar);
-									$kel += $kelu;
-									$mas += $masu;
-									$final = $mas-$kel;
-									
-									setup_postdata($post);
-								}
+						    	// Use cached totals
+						    	$infaq_totals = wm_get_infaq_totals();
+						    	$final = $infaq_totals['saldo'];
 							?>
 							
 							<div class="wm__saldotitle">
 						    	<?php echo esc_html__('INFAQ FUND BALANCE REPORT', 'wp-masjid'); ?>
 							</div>
-							<div class="wm__realsaldo"><?php echo esc_html__('BALANCE', 'wp-masjid'); ?> : <span><?php echo esc_html__('Rp', 'wp-masjid'); ?> <?php echo esc_html( isset( $final ) ? number_format($final,0,'.','.') : 0 ); ?>,-</span></div>
+							<div class="wm__realsaldo"><?php echo esc_html__('BALANCE', 'wp-masjid'); ?> : <span><?php echo esc_html__('Rp', 'wp-masjid'); ?> <?php echo esc_html( number_format($final, 0, '.', '.') ); ?>,-</span></div>
 							<div class="wm__infaqline">
 						    	<?php echo esc_html__('Please give your infaq through the following account', 'wp-masjid'); ?>
 							</div>
@@ -350,23 +285,11 @@ class Laporan_infaq extends WP_Widget {
 					
 				</div>
 			</div>
-			<script>
-            jQuery(document).ready(function($) {
-                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
-                owl.owlCarousel({
-                    loop: true,
-                    nav: false,
-					dots: false,
-                    lazyLoad: true,
-			    	autoplay: true,
-					smartSpeed: 1000,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-					margin: 0,
-					items:1,
-                });
-            });
-		    </script>
+			<?php
+			wm_enqueue_carousel_script( $args['widget_id'], array(
+				'margin' => 0,
+			) );
+			?>
 		
 		<?php
 		}

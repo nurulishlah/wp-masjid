@@ -72,23 +72,14 @@ class Tausiyah_Terbaru extends WP_Widget {
 					?>
 				</div>
 			</div>
-			<script>
-            jQuery(document).ready(function($) {
-                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
-                owl.owlCarousel({
-                    loop: true,
-                    nav: true,
-					dots: false,
-                    lazyLoad: true,
-			    	autoplay: false,
-					smartSpeed: 1000,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-					margin: 20,
-					items:4,
-                });
-            });
-		    </script>
+			<?php
+			wm_enqueue_carousel_script( $args['widget_id'], array(
+				'nav'      => true,
+				'autoplay' => false,
+				'margin'   => 20,
+				'items'    => 4,
+			) );
+			?>
 		
 		<?php
 		} else {
@@ -139,37 +130,19 @@ class Tausiyah_Terbaru extends WP_Widget {
 					?>
 				</div>
 			</div>
-			<script>
-            jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
-                owl.owlCarousel({
-                    loop: true,
-                    nav: true,
-					dots: false,
-                    lazyLoad: true,
-			    	autoplay: true,
-					smartSpeed: 1000,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-					margin: 50,
-					items:2,
-					responsive:{
-                        0:{ 
-							margin: 15,
-                        },
-                        600:{
-                            margin: 20,
-                        },
-                        800:{
-                            margin: 30,
-                        },
-                        982:{
-                            margin: 40,
-                        }
-                    }
-                });
-            });
-		    </script>
+			<?php
+			wm_enqueue_carousel_script( $args['widget_id'], array(
+				'nav'        => true,
+				'margin'     => 50,
+				'items'      => 2,
+				'responsive' => array(
+					0   => array( 'margin' => 15 ),
+					600 => array( 'margin' => 20 ),
+					800 => array( 'margin' => 30 ),
+					982 => array( 'margin' => 40 ),
+				),
+			) );
+			?>
 		
 		<?php
 		}

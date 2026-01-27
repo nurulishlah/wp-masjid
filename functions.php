@@ -216,3 +216,74 @@ function wp_tutspage() {
 }
 
 
+/**
+ * Get infaq totals with transient caching
+ * 
+ * Caches total_masuk, total_keluar, and saldo for 1 hour.
+ * Cache is invalidated when infaq posts are saved or deleted.
+ *
+ * @return array Array with 'total_masuk', 'total_keluar', 'saldo' keys
+ */
+function wm_get_infaq_totals() {
+	$transient_key = 'wm_infaq_totals';
+	$cached = get_transient( $transient_key );
+	
+	if ( false !== $cached ) {
+		return $cached;
+	}
+	
+	$args = array(
+		'post_type'      => 'infaq',
+		'posts_per_page' => -1,
+		'meta_query'     => array(
+			array(
+				'key'     => '_status',
+				'compare' => 'EXISTS',
+			),
+		),
+		'fields'         => 'ids', // Only get IDs for performance
+	);
+	
+	$query = new WP_Query( $args );
+	
+	$total_keluar = 0;
+	$total_masuk  = 0;
+	
+	if ( $query->have_posts() ) {
+		foreach ( $query->posts as $post_id ) {
+			$status       = get_post_meta( $post_id, '_status', true );
+			$jumlah_raw   = get_post_meta( $post_id, '_juminfaq', true );
+			$jumlah_infaq = intval( str_replace( '.', '', $jumlah_raw ) );
+			
+			if ( 'keluar' === $status ) {
+				$total_keluar += $jumlah_infaq;
+			} elseif ( 'masuk' === $status ) {
+				$total_masuk += $jumlah_infaq;
+			}
+		}
+	}
+	
+	$result = array(
+		'total_masuk'  => $total_masuk,
+		'total_keluar' => $total_keluar,
+		'saldo'        => $total_masuk - $total_keluar,
+	);
+	
+	// Cache for 1 hour
+	set_transient( $transient_key, $result, HOUR_IN_SECONDS );
+	
+	return $result;
+}
+
+/**
+ * Invalidate infaq totals cache when infaq posts are saved or deleted
+ */
+function wm_invalidate_infaq_cache( $post_id ) {
+	if ( 'infaq' === get_post_type( $post_id ) ) {
+		delete_transient( 'wm_infaq_totals' );
+	}
+}
+add_action( 'save_post', 'wm_invalidate_infaq_cache' );
+add_action( 'delete_post', 'wm_invalidate_infaq_cache' );
+add_action( 'trashed_post', 'wm_invalidate_infaq_cache' );
+add_action( 'untrashed_post', 'wm_invalidate_infaq_cache' );

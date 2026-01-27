@@ -25,13 +25,13 @@ class Perpustakaan extends WP_Widget {
 		?>
 		
 	    	<div class="widget__library">
-			    <?php if ( $title ) { echo '<span class="kalib__title">' . $title . '</span>'; } ?>
+			    <?php if ( $title ) { echo '<span class="kalib__title">' . esc_html( $title ) . '</span>'; } ?>
 		    	<div class="box__library">
 				    <?php
 				    	global $post;
 						$infaq_argument = array( 
 					    	'post_type' => 'perpustakaan',
-							'showposts' => $show_book,
+							'posts_per_page' => $show_book,
 							'orderby' => 'rand',
 						);
 						$loop_infaq = get_posts($infaq_argument);
@@ -58,16 +58,16 @@ class Perpustakaan extends WP_Widget {
 													    	);
 														}
 													?>
-													<div class="book__count"><?php echo $jumlahbuku; ?></div>
+													<div class="book__count"><?php echo esc_html( $jumlahbuku ); ?></div>
 												</div>
 										    	<div class="book__data">
 												    <div class="book__title"><strong><?php the_title(); ?></strong> </div>
-													<div class="book__page"><?php echo $halaman; ?> <?php echo esc_html_e('Pages', 'wp-masjid'); ?></div>
+													<div class="book__page"><?php echo esc_html( $halaman ); ?> <?php esc_html_e('Pages', 'wp-masjid'); ?></div>
 												    <div class="book__author">
-													    <i class="icofont-business-man-alt-1"></i> <?php echo $penulis; ?>
+													    <i class="icofont-business-man-alt-1" aria-hidden="true"></i> <?php echo esc_html( $penulis ); ?>
 													</div>
 											    	<div class="book__publisher">
-													    <i class="icofont-book-alt"></i> <?php echo $penerbit; ?>
+													    <i class="icofont-book-alt" aria-hidden="true"></i> <?php echo esc_html( $penerbit ); ?>
 													</div>
 												</div>
 											</div>
@@ -78,7 +78,7 @@ class Perpustakaan extends WP_Widget {
 						</div><!-- end table -->
 						
 						<?php
-				    	wp_reset_query();
+				    	wp_reset_postdata();
 			    	?>
 				</div>
 			</div>
@@ -90,7 +90,7 @@ class Perpustakaan extends WP_Widget {
 		    <div class="widget__library">
 			    <?php
 					if ( $title ) {
-						echo '<span class="lib__title">' . $title . '</span>';
+						echo '<span class="lib__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__library">
@@ -108,10 +108,10 @@ class Perpustakaan extends WP_Widget {
 						    <table class="library">
 							    <thead>
 								    <tr>
-								        <td class="book__title"><strong><?php echo esc_html_e('Book Title', 'wp-masjid'); ?></strong></td>
-								    	<td><strong><?php echo esc_html_e('Author', 'wp-masjid'); ?></strong></td>
-								    	<td><strong><?php echo esc_html_e('Publisher', 'wp-masjid'); ?></strong></td>
-								    	<td><strong><?php echo esc_html_e('Count', 'wp-masjid'); ?></strong></td>
+								        <td class="book__title"><strong><?php esc_html_e('Book Title', 'wp-masjid'); ?></strong></td>
+								    	<td><strong><?php esc_html_e('Author', 'wp-masjid'); ?></strong></td>
+								    	<td><strong><?php esc_html_e('Publisher', 'wp-masjid'); ?></strong></td>
+								    	<td><strong><?php esc_html_e('Count', 'wp-masjid'); ?></strong></td>
 									</tr>
 								</thead>
 								<tbody>
@@ -124,10 +124,10 @@ class Perpustakaan extends WP_Widget {
 											setup_postdata($post);
 											?>
 											<tr>
-										    	<td class="book__title"><strong><?php the_title(); ?></strong> (<?php echo $halaman; ?> <?php echo esc_html_e('Pages', 'wp-masjid'); ?>)</td>
-												<td><?php echo $penulis; ?></td>
-												<td><?php echo $penerbit; ?></td>
-												<td><?php echo $jumlahbuku; ?></td>
+										    	<td class="book__title"><strong><?php the_title(); ?></strong> (<?php echo esc_html( $halaman ); ?> <?php esc_html_e('Pages', 'wp-masjid'); ?>)</td>
+												<td><?php echo esc_html( $penulis ); ?></td>
+												<td><?php echo esc_html( $penerbit ); ?></td>
+												<td><?php echo esc_html( $jumlahbuku ); ?></td>
 											</tr>
 											<?php 
 										}
@@ -161,13 +161,13 @@ class Perpustakaan extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Widget displays book catalog in Library', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Widget displays book catalog in Library', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
-	    	<label for="<?php echo $this->get_field_id( 'show_book' ); ?>"><?php echo __( 'Count', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'show_book' ); ?>" name="<?php echo $this->get_field_name( 'show_book' ); ?>" type="number" value="<?php echo $show_book; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'show_book' ) ); ?>"><?php echo esc_html__( 'Count', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'show_book' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_book' ) ); ?>" type="number" value="<?php echo esc_attr( $show_book ); ?>" />
 	    </div>
         
         <?php

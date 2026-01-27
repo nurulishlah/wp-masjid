@@ -23,18 +23,18 @@ class Layanan_Masjid extends WP_Widget {
 	    	<div class="widget__layanan">
 			    <?php
 					if ( $title ) {
-						echo '<span class="kalay__title">' . $title . '</span>';
+						echo '<span class="kalay__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__layanan div__clear">
 				    <?php
 				    	$layanan_arg = array( 
 					    	'post_type' => 'layanan',
-							'showposts' => 30,
+							'posts_per_page' => 30,
 							'orderby'   => 'rand',
 						);
 						$layanan = get_posts($layanan_arg);
-						echo '<div class="' .$args['widget_id']. ' owl-carousel owl-theme">';
+						echo '<div class="' . esc_attr( $args['widget_id'] ) . ' owl-carousel owl-theme">';
 						
 						global $post;
 						foreach ($layanan as $post) {
@@ -53,7 +53,7 @@ class Layanan_Masjid extends WP_Widget {
 								</div>
 								<div class="kalay__data">
 									<div class="kalay__link">
-								    	<a href="<?php the_permalink() ?>"><?php echo the_title(); ?></a>
+								    	<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 									</div>
 									<div class="kalay__contact div__clear">
 								    	<div class="kalay__people"><?php echo esc_html( $hubungi ); ?></div>
@@ -68,13 +68,13 @@ class Layanan_Masjid extends WP_Widget {
 						}
 						
 						echo '</div>';
-						wp_reset_query();
+						wp_reset_postdata();
 					?>
 				</div>
 			</div>
 			<script>
             jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
+                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
                 owl.owlCarousel({
                     loop: true,
                     nav: false,
@@ -97,7 +97,7 @@ class Layanan_Masjid extends WP_Widget {
 			<div class="widget__layanan">
 			    <?php
 					if ( $title ) {
-						echo '<span class="lay__title">' . $title . '</span>';
+						echo '<span class="lay__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__layanan div__clear">
@@ -127,10 +127,10 @@ class Layanan_Masjid extends WP_Widget {
 									?>
 								</div>
 								<div class="service__meta">
-									<div class="service__title"><?php echo the_title(); ?></div>
+									<div class="service__title"><?php the_title(); ?></div>
 									<div class="service__contact div__clear">
-								    	<div class="service__people"><?php echo $hubungi; ?></div>
-										<div class="service__call"><?php echo $informasi; ?></div>
+								    	<div class="service__people"><?php echo esc_html( $hubungi ); ?></div>
+										<div class="service__call"><?php echo esc_html( $informasi ); ?></div>
 									</div>
 								</div>
 								</a>
@@ -194,11 +194,11 @@ class Layanan_Masjid extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Widget display Mosque Services', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Widget display Mosque Services', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</div>
 		
         <?php

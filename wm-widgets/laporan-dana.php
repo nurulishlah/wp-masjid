@@ -28,7 +28,7 @@ class Laporan_Dana extends WP_Widget {
 						$infaq_argument = array( 
 					    	'post_type' => 'infaq',
 							'meta_key' => '_status',
-							'showposts' => 2,
+							'posts_per_page' => 2,
 							'meta_query' => array(
 						    	array(
 							    	'key' => '_status',
@@ -45,10 +45,10 @@ class Laporan_Dana extends WP_Widget {
 					        	<div class="kadana__text">
 								<?php
 						        	if ( $title ) {
-								    	echo '<div class="dana__title">' . $title . '</div>';
+								    	echo '<div class="dana__title">' . esc_html( $title ) . '</div>';
 							     	}
 									if ( $addtext ) {
-								    	echo '<div class="dana__addtext">' . $addtext . '</div>';
+								    	echo '<div class="dana__addtext">' . esc_html( $addtext ) . '</div>';
 							     	}
 						    	?>
 								</div>
@@ -62,10 +62,10 @@ class Laporan_Dana extends WP_Widget {
 											setup_postdata($post);
 											?>
 										     	<div class="kadana__in">
-											        <i class="icon-wm-heart-half"></i>
-											    	<div class="kadana__date"><?php echo date_i18n("j F Y", strtotime($tanginfaq)); ?></div>
+											        <i class="icon-wm-heart-half" aria-hidden="true"></i>
+											    	<div class="kadana__date"><?php echo esc_html( date_i18n("j F Y", strtotime($tanginfaq)) ); ?></div>
 										    		<div class="kadana__name"><?php the_title(); ?></div>
-										        	<div class="kadana__nom"><strong><?php echo __('Rp', 'wp-masjid'); ?> <?php echo $juminfaq; ?></strong></div>
+										        	<div class="kadana__nom"><strong><?php echo esc_html__('Rp', 'wp-masjid'); ?> <?php echo esc_html( $juminfaq ); ?></strong></div>
 										    	</div>
 											<?php 
 										}
@@ -74,7 +74,7 @@ class Laporan_Dana extends WP_Widget {
 							</div>
 						</div><!-- end table -->
 						<?php
-				    	wp_reset_query();
+				    	wp_reset_postdata();
 			    	?>
 					
 				</div>
@@ -109,10 +109,10 @@ class Laporan_Dana extends WP_Widget {
 					        	<div class="dana__text">
 								<?php
 						        	if ( $title ) {
-								    	echo '<div class="dana__title">' . $title . '</div>';
+								    	echo '<div class="dana__title">' . esc_html( $title ) . '</div>';
 							     	}
 									if ( $addtext ) {
-								    	echo '<div class="dana__addtext">' . $addtext . '</div>';
+								    	echo '<div class="dana__addtext">' . esc_html( $addtext ) . '</div>';
 							     	}
 						    	?>
 								</div>
@@ -135,10 +135,10 @@ class Laporan_Dana extends WP_Widget {
 									    	}
 											?>
 										     	<div class="dankel__inner">
-											        <i class="icon-wm-heart-half"></i>
-											    	<div class="dana__tang"><?php echo date_i18n("j F Y", strtotime($tanginfaq)); ?></div>
+											        <i class="icon-wm-heart-half" aria-hidden="true"></i>
+											    	<div class="dana__tang"><?php echo esc_html( date_i18n("j F Y", strtotime($tanginfaq)) ); ?></div>
 										    		<div class="dana__desc"><?php the_title(); ?></div>
-										        	<div class="dana__nominal"><strong><?php echo __('Rp', 'wp-masjid'); ?> <?php echo $juminfaq; ?></strong></div>
+										        	<div class="dana__nominal"><strong><?php echo esc_html__('Rp', 'wp-masjid'); ?> <?php echo esc_html( $juminfaq ); ?></strong></div>
 										    	</div>
 											</div>
 											<?php 
@@ -173,13 +173,13 @@ class Laporan_Dana extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Show cash out report', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Show cash out report', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
-		    <label for="<?php echo $this->get_field_id( 'addtext' ); ?>"><?php echo __( 'Description', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'addtext' ); ?>" name="<?php echo $this->get_field_name( 'addtext' ); ?>" type="textarea" value="<?php echo $addtext; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		    <label for="<?php echo esc_attr( $this->get_field_id( 'addtext' ) ); ?>"><?php echo esc_html__( 'Description', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'addtext' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'addtext' ) ); ?>" type="textarea" value="<?php echo esc_attr( $addtext ); ?>" />
 		</div>
 		
     <?php

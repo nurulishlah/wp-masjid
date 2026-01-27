@@ -25,10 +25,10 @@ class Galeri_Gambar extends WP_Widget {
 				    <?php
 				    	$arg_gal = array( 
 					    	'post_type' => 'galeri',
-							'showposts' => 4,
+							'posts_per_page' => 4,
 						);
 						$galerie = get_posts( $arg_gal );
-						echo '<div class="' .$args['widget_id']. '">';
+						echo '<div class="' . esc_attr( $args['widget_id'] ) . '">';
 						
 						global $post;
 						$gall = 0;
@@ -49,9 +49,9 @@ class Galeri_Gambar extends WP_Widget {
 									<?php 
 									    if ( $gall == 4 ) {
 									    	echo '<div class="kaall__galeri">';
-			    							echo '<a href="'.get_post_type_archive_link('galeri').'">';
+			    							echo '<a href="' . esc_url( get_post_type_archive_link('galeri') ) . '">';
 				    						if ( $title ) {
-					    						echo '<span class="kagal__title">' . $title . '</span>';
+					    						echo '<span class="kagal__title">' . esc_html( $title ) . '</span>';
 						    				}
 							    			echo '</a>';
 								    		echo '</div>';
@@ -64,7 +64,7 @@ class Galeri_Gambar extends WP_Widget {
 						}
 						
 						echo '</div>';
-						wp_reset_query();
+						wp_reset_postdata();
 					?>
 				</div>
 			</div>
@@ -76,14 +76,14 @@ class Galeri_Gambar extends WP_Widget {
 		    <div class="widget__galeri">
 			    <?php
 					if ( $title ) {
-						echo '<span class="gal__title">' . $title . '</span>';
+						echo '<span class="gal__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__galeri div__clear">
 				    <?php
 				    	$layanan_arg = array( 
 					    	'post_type' => 'galeri',
-							'showposts' => 9,
+							'posts_per_page' => 9,
 						);
 						$layanan = get_posts($layanan_arg);
 						echo '<div class="' .$args['widget_id']. '">';
@@ -132,11 +132,11 @@ class Galeri_Gambar extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Widget display Image Gallery', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Widget display Image Gallery', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</div>
 		
     <?php

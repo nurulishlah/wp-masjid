@@ -21,17 +21,17 @@ class Inventaris_Masjid extends WP_Widget {
 		?>
 		
 	    	<div class="widget__inventaris">
-			    <?php if ( $title ) { echo '<span class="kainv__title">' . $title . '</span>'; }
+			    <?php if ( $title ) { echo '<span class="kainv__title">' . esc_html( $title ) . '</span>'; }
 				?>
 		    	<div class="kainv__block div__clear">
 				    <?php
 				    	$layanan_arg = array( 
 					    	'post_type' => 'inventaris',
-							'showposts' => 30,
+							'posts_per_page' => 30,
 							'orderby'   => 'rand',
 						);
 						$layanan = get_posts($layanan_arg);
-						echo '<div class="' .$args['widget_id']. ' owl-carousel owl-theme">';
+						echo '<div class="' . esc_attr( $args['widget_id'] ) . ' owl-carousel owl-theme">';
 						
 						global $post;
 						foreach ($layanan as $post) {
@@ -49,7 +49,7 @@ class Inventaris_Masjid extends WP_Widget {
 				    						}
 					    				?>
 						    		</div>
-							    	<div class="kainv__cat"><?php echo the_title(); ?></div>
+							    	<div class="kainv__cat"><?php the_title(); ?></div>
 								</a>
 							</div>
 							
@@ -58,13 +58,13 @@ class Inventaris_Masjid extends WP_Widget {
 						}
 						
 						echo '</div>';
-						wp_reset_query();
+						wp_reset_postdata();
 					?>
 				</div>
 			</div>
 			<script>
             jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
+                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
                 owl.owlCarousel({
                     loop: true,
                     nav: false,
@@ -103,7 +103,7 @@ class Inventaris_Masjid extends WP_Widget {
 	    	<div class="widget__inventaris">
 			    <?php
 					if ( $title ) {
-						echo '<span class="inv__title">' . $title . '</span>';
+						echo '<span class="inv__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__inventaris div__clear">
@@ -133,7 +133,7 @@ class Inventaris_Masjid extends WP_Widget {
 									?>
 								</div>
 								<div class="inv__meta">
-									<div class="inv__cat"><?php echo the_title(); ?></div>
+									<div class="inv__cat"><?php the_title(); ?></div>
 								</div>
 								</a>
 							</div>
@@ -149,7 +149,7 @@ class Inventaris_Masjid extends WP_Widget {
 			</div>
 			<script>
             jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
+                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
                 owl.owlCarousel({
                     loop: true,
                     nav: false,
@@ -196,11 +196,11 @@ class Inventaris_Masjid extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-			<?php echo __( 'Widget displays Mosque Inventory', 'wp-masjid' ); ?>
+			<?php echo esc_html__( 'Widget displays Mosque Inventory', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</div>
 		
         <?php

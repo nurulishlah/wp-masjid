@@ -20,16 +20,16 @@ class Galeri_Video extends WP_Widget {
 		if ( get_theme_mod('wm_mode') == "khalifah" ) {
 		?>
 		    <div class="widget__video">
-			    <?php if ( $title ) { echo '<span class="kavid__title">' . $title . '</span>'; }
+			    <?php if ( $title ) { echo '<span class="kavid__title">' . esc_html( $title ) . '</span>'; }
 				?>
 		    	<div class="box__video div__clear">
 				    <?php
 				    	$layanan_arg = array( 
 					    	'post_type' => 'video',
-							'showposts' => 3,
+							'posts_per_page' => 3,
 						);
 						$layanan = get_posts($layanan_arg);
-						echo '<div class="' .$args['widget_id']. '">';
+						echo '<div class="' . esc_attr( $args['widget_id'] ) . '">';
 						
 						global $post;
 						foreach ($layanan as $post) {
@@ -57,7 +57,7 @@ class Galeri_Video extends WP_Widget {
 						}
 						
 						echo '</div>';
-						wp_reset_query();
+						wp_reset_postdata();
 					?>
 				</div>
 			</div>
@@ -68,7 +68,7 @@ class Galeri_Video extends WP_Widget {
 	    	<div class="widget__video">
 			    <?php
 					if ( $title ) {
-						echo '<span class="vid__title">' . $title . '</span>';
+						echo '<span class="vid__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__video div__clear">
@@ -128,11 +128,11 @@ class Galeri_Video extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Widget display Video Gallery', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Widget display Video Gallery', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</div>
 		
     <?php

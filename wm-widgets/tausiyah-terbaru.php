@@ -23,17 +23,17 @@ class Tausiyah_Terbaru extends WP_Widget {
 	    	<div class="widget__tausiyah">
 			    <?php
 					if ( $title ) {
-						echo '<span class="katau__title">' . $title . '</span>';
+						echo '<span class="katau__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="tau__box div__clear">
 				    <?php
 				    	$layanan_arg = array( 
 					    	'post_type' => 'tausiyah',
-							'showposts' => 30,
+							'posts_per_page' => 30,
 						);
 						$layanan = get_posts($layanan_arg);
-						echo '<div class="' .$args['widget_id']. ' owl-carousel owl-theme">';
+						echo '<div class="' . esc_attr( $args['widget_id'] ) . ' owl-carousel owl-theme">';
 						
 						global $post;
 						foreach ($layanan as $post) {
@@ -55,11 +55,11 @@ class Tausiyah_Terbaru extends WP_Widget {
 				        					}
 				        				}
 									?>
-									<div class="tau__time"><?php echo get_the_time('j M Y'); ?></div>
+									<div class="tau__time"><?php echo esc_html( get_the_time('j M Y') ); ?></div>
 								</div>
 								<div class="tau__meta">	
-								    <div class="tau__aut"><?php echo __('By', 'wp-masjid'); ?> : <?php echo get_the_author(); ?></div>
-									<div class="tau__ttl"><a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a></div>
+								    <div class="tau__aut"><?php echo esc_html__('By', 'wp-masjid'); ?> : <?php echo esc_html( get_the_author() ); ?></div>
+									<div class="tau__ttl"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 								</div>
 							</div>
 							
@@ -68,13 +68,13 @@ class Tausiyah_Terbaru extends WP_Widget {
 						}
 						
 						echo '</div>';
-						wp_reset_query();
+						wp_reset_postdata();
 					?>
 				</div>
 			</div>
 			<script>
             jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
+                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
                 owl.owlCarousel({
                     loop: true,
                     nav: true,
@@ -97,7 +97,7 @@ class Tausiyah_Terbaru extends WP_Widget {
 	    	<div class="widget__tausiyah">
 			    <?php
 					if ( $title ) {
-						echo '<span class="tau__title">' . $title . '</span>';
+						echo '<span class="tau__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__layanan div__clear">
@@ -123,10 +123,10 @@ class Tausiyah_Terbaru extends WP_Widget {
 									?>
 								</div>
 								<div class="tausiyah__meta">	
-								    <div class="tausiyah__date"><span><?php echo __('By', 'wp-masjid'); ?> : <?php get_the_author(); ?></span> <span><i class="icon-wm-clock"></i> <?php echo get_the_time('l, j M Y'); ?></span></div>
-									<div class="tausiyah__title"><?php echo the_title(); ?></div>
+								    <div class="tausiyah__date"><span><?php echo esc_html__('By', 'wp-masjid'); ?> : <?php echo esc_html( get_the_author() ); ?></span> <span><i class="icon-wm-clock" aria-hidden="true"></i> <?php echo esc_html( get_the_time('l, j M Y') ); ?></span></div>
+									<div class="tausiyah__title"><?php the_title(); ?></div>
 									<div class="tausiyah__excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></div>
-								    <a class="tausiyah__more" href="<?php echo the_permalink(); ?>"><?php echo esc_html_e('Read more', 'wp-masjid'); ?></a>
+								    <a class="tausiyah__more" href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'wp-masjid'); ?></a>
 								</div>
 							</div>
 							
@@ -188,11 +188,11 @@ class Tausiyah_Terbaru extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Widget display Latest Tausiyah', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Widget display Latest Tausiyah', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</div>
 		
 		<?php

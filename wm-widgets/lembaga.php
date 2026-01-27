@@ -21,17 +21,17 @@ class Daftar_Lembaga extends WP_Widget {
 		?>
 		
 		    <div class="widget__inventaris">
-			    <?php if ( $title ) { echo '<span class="kainv__title">' . $title . '</span>'; }
+			    <?php if ( $title ) { echo '<span class="kainv__title">' . esc_html( $title ) . '</span>'; }
 				?>
 		    	<div class="kainv__block div__clear">
 				    <?php
 				    	$layanan_arg = array( 
 					    	'post_type' => 'lembaga',
-							'showposts' => 30,
+							'posts_per_page' => 30,
 							'orderby'   => 'rand',
 						);
 						$layanan = get_posts($layanan_arg);
-						echo '<div class="' .$args['widget_id']. ' owl-carousel owl-theme">';
+						echo '<div class="' . esc_attr( $args['widget_id'] ) . ' owl-carousel owl-theme">';
 						
 						global $post;
 						foreach ($layanan as $post) {
@@ -49,7 +49,7 @@ class Daftar_Lembaga extends WP_Widget {
 				    						}
 					    				?>
 						    		</div>
-							    	<div class="kainv__cat"><?php echo the_title(); ?></div>
+							    	<div class="kainv__cat"><?php the_title(); ?></div>
 								</a>
 							</div>
 							
@@ -58,13 +58,13 @@ class Daftar_Lembaga extends WP_Widget {
 						}
 						
 						echo '</div>';
-						wp_reset_query();
+						wp_reset_postdata();
 					?>
 				</div>
 			</div>
 			<script>
             jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
+                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
                 owl.owlCarousel({
                     loop: true,
                     nav: false,
@@ -100,7 +100,7 @@ class Daftar_Lembaga extends WP_Widget {
 	    	<div class="widget__lembaga">
 			    <?php
 					if ( $title ) {
-						echo '<span class="lem__title">' . $title . '</span>';
+						echo '<span class="lem__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 		    	<div class="box__lembaga div__clear">
@@ -110,7 +110,7 @@ class Daftar_Lembaga extends WP_Widget {
 							'showposts' => 30,
 						);
 						$layanan = get_posts($layanan_arg);
-						echo '<div class="' .$args['widget_id']. '">';
+						echo '<div class="' . esc_attr( $args['widget_id'] ) . '">';
 						
 						global $post;
 						foreach ($layanan as $post) {
@@ -127,8 +127,8 @@ class Daftar_Lembaga extends WP_Widget {
 									?>
 									</a>
 								    <div class="lembaga__meta">	
-								        <div class="lembaga__title"><?php echo the_title(); ?></div>
-								        <a class="lembaga__more" href="<?php the_permalink(); ?>"><?php echo esc_html_e('Read more', 'wp-masjid'); ?></a>
+								        <div class="lembaga__title"><?php the_title(); ?></div>
+								        <a class="lembaga__more" href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'wp-masjid'); ?></a>
 									</div>
 								</div>
 							</div>
@@ -160,11 +160,11 @@ class Daftar_Lembaga extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Widget display Mosque Institution', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Widget display Mosque Institution', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		
     <?php

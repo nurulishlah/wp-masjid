@@ -32,9 +32,7 @@
 					    	<div class="wm__logo">
 						    	<?php wm_custom_logo(); ?>
 							</div>
-							<button class="wm__openmenu" aria-label="<?php esc_attr_e( 'Open menu', 'wp-masjid' ); ?>" aria-expanded="false">
-								<i class="icon-wm-menu" aria-hidden="true"></i>
-							</button>
+							<span class="wm__openmenu" role="button" tabindex="0" aria-label="<?php esc_attr_e( 'Open menu', 'wp-masjid' ); ?>" aria-expanded="false"></span>
 							<div class="wm__sholat">
 						        <div class="wm__headspan"><span><?php echo esc_html( date_i18n('l, j F Y') ); ?></span></div>
 							    <div class="wm__sholatwidget"><?php wm_city_prayer(); ?></div>

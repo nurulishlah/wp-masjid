@@ -21,15 +21,15 @@ class Petugas_Harian extends WP_Widget {
 		?>
 		
 	    	<div class="widget__petugas">
-			    <?php if ( $title ) { echo '<span class="kashalat__title">' . $title . '</span>'; } ?>
+			    <?php if ( $title ) { echo '<span class="kashalat__title">' . esc_html( $title ) . '</span>'; } ?>
 				<div class="div__clear outer_petugas">
-				    <div class="petugas <?php echo $args['widget_id']; ?> owl-carousel owl-theme"><?php petugas_harian(); ?></div>
+				    <div class="petugas <?php echo esc_attr( $args['widget_id'] ); ?> owl-carousel owl-theme"><?php petugas_harian(); ?></div>
 				</div>
 			</div>
 			
 			<script>
             jQuery(document).ready(function($) {
-                var owl = $('.<?php echo $args['widget_id']; ?>');
+                var owl = $('.<?php echo esc_js( $args['widget_id'] ); ?>');
                 owl.owlCarousel({
                     loop: true,
                     nav: false,
@@ -52,7 +52,7 @@ class Petugas_Harian extends WP_Widget {
 			<div class="widget__petugas">
 			    <?php
 					if ( $title ) {
-						echo '<span class="petugas__title">' . $title . '</span>';
+						echo '<span class="petugas__title">' . esc_html( $title ) . '</span>';
 					}
 				?>
 				<div class="div__clear outer_petugas">
@@ -108,11 +108,11 @@ class Petugas_Harian extends WP_Widget {
 		?>
 		
 		<div class="wm__inwidget">
-	    	<?php echo __( 'Widget display Daily Officer', 'wp-masjid' ); ?>
+	    	<?php echo esc_html__( 'Widget display Daily Officer', 'wp-masjid' ); ?>
 		</div>
 		<div class="wm__inwidget">
-	    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title', 'wp-masjid' ); ?></label>
-	    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	    	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title', 'wp-masjid' ); ?></label>
+	    	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</div>
 		
     <?php

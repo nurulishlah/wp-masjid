@@ -1,8 +1,9 @@
-	<div class="wrapper khalifah">
+	<a class="skip-link screen-reader-text" href="#main-content"><?php esc_html_e( 'Skip to content', 'wp-masjid' ); ?></a>
+	<div class="wrapper khalifah" id="main-content" role="main">
 		<div class="ka__container">
 		    <div class="ka__header div__clear">
 				<div class="ka__logo">
-				    <span onclick="kalimenu()"></span>
+				    <span class="ka__menu-toggle" onclick="kalimenu()" role="button" tabindex="0" aria-label="<?php esc_attr_e( 'Toggle menu', 'wp-masjid' ); ?>" aria-expanded="false"></span>
 					<?php wm_custom_logo(); ?>
 				</div>
 				<div class="ka__menu">
@@ -31,6 +32,6 @@
          	?>
 			
 			<div class="ka__sholattime div__clear">
-   				<div class="wm__headspan"><span><?php echo date_i18n('l, j F Y'); ?></span></div>
+   				<div class="wm__headspan"><span><?php echo esc_html( date_i18n('l, j F Y') ); ?></span></div>
 				<div class="wm__sholatwidget"><?php wm_city_prayer(); ?></div>
 			</div>

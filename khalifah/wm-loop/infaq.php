@@ -138,16 +138,7 @@
 					
 				    				    <tr>
 				    						<td><div class="dana__desc"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div></td>
-				    						<td class="dana__right">
-				    							<?php if ($status === 'keluar') { ?>
-				    								<div class="dana__jum status__out">- <?php echo __('Rp', 'wp-masjid'); ?> <?php echo $juminfaq; ?></div>
-				    								<div class="dana__date"><?php echo date_i18n("d M Y", strtotime($tanginfaq)); ?></div>
-				    							<?php } else if ($status === 'masuk') { ?>
-				    								<div class="dana__jum status__in">+ <?php echo __('Rp', 'wp-masjid'); ?> <?php echo $juminfaq; ?></div>
-				    								<div class="dana__date"><?php echo date_i18n("d M Y", strtotime($tanginfaq)); ?></div>
-				    							<?php } ?>
-				    						</td>
-											<td class="dana__categori" style="width: 20%; text-align: right;">
+				    						<td class="dana__categori" style="width: 20%; text-align: right;">
 												<?php
 													$terms = get_the_terms($post->ID, 'kat-infaq');
 													if ($terms && !is_wp_error($terms)) {
@@ -157,6 +148,16 @@
 													}
 												?>
 											</td>
+											<td class="dana__right">
+				    							<?php if ($status === 'keluar') { ?>
+				    								<div class="dana__jum status__out">- <?php echo __('Rp', 'wp-masjid'); ?> <?php echo $juminfaq; ?></div>
+				    								<div class="dana__date"><?php echo date_i18n("d M Y", strtotime($tanginfaq)); ?></div>
+				    							<?php } else if ($status === 'masuk') { ?>
+				    								<div class="dana__jum status__in">+ <?php echo __('Rp', 'wp-masjid'); ?> <?php echo $juminfaq; ?></div>
+				    								<div class="dana__date"><?php echo date_i18n("d M Y", strtotime($tanginfaq)); ?></div>
+				    							<?php } ?>
+				    						</td>
+											
 				    					</tr>
 						
 				    			    	<?php 

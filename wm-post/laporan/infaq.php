@@ -297,9 +297,12 @@ function set_custom_edit_infaq_columns($columns) {
     $new_columns['infaq_status'] = __('Status', 'wp-masjid');
     $new_columns['infaq_date'] = __('Date', 'wp-masjid');
     $new_columns['infaq_amount'] = __('Amount', 'wp-masjid');
+    $new_columns['tax_bulan'] = __('Month', 'wp-masjid');
+    $new_columns['tax_tahun'] = __('Year', 'wp-masjid');
+    $new_columns['tax_kategori'] = __('Category', 'wp-masjid');
     $new_columns['infaq_from'] = __('From', 'wp-masjid');
     $new_columns['infaq_desc'] = __('Description', 'wp-masjid');
-    $new_columns['date'] = $columns['date']; 
+    // $new_columns['date'] = $columns['date']; // Optional: Hide original date
     
     return $new_columns;
 }
@@ -310,7 +313,7 @@ function custom_infaq_column($column, $post_id) {
         case 'infaq_status':
             $status = get_post_meta($post_id, '_status', true);
             ?>
-            <select class="infaq-cell-input widefat" data-field="_status">
+            <select class="infaq-cell-input widefat" data-field="_status" style="max-width: 100px;">
                 <option value="masuk" <?php selected($status, 'masuk'); ?>><?php _e('Received', 'wp-masjid'); ?></option>
                 <option value="keluar" <?php selected($status, 'keluar'); ?>><?php _e('Disbursed', 'wp-masjid'); ?></option>
             </select>
@@ -319,13 +322,13 @@ function custom_infaq_column($column, $post_id) {
         case 'infaq_date':
             $date = get_post_meta($post_id, '_tanginfaq', true);
             ?>
-            <input type="date" class="infaq-cell-input widefat" data-field="_tanginfaq" value="<?php echo esc_attr($date); ?>" />
+            <input type="date" class="infaq-cell-input widefat" data-field="_tanginfaq" value="<?php echo esc_attr($date); ?>" style="max-width: 130px;" />
             <?php
             break;
         case 'infaq_amount':
             $amount = get_post_meta($post_id, '_juminfaq', true);
             ?>
-            <input type="text" class="infaq-cell-input widefat" data-field="_juminfaq" value="<?php echo esc_attr($amount); ?>" />
+            <input type="text" class="infaq-cell-input widefat" data-field="_juminfaq" value="<?php echo esc_attr($amount); ?>" style="max-width: 120px;" />
             <?php
             break;
         case 'infaq_from':
@@ -338,6 +341,45 @@ function custom_infaq_column($column, $post_id) {
             $desc = get_post_meta($post_id, '_ketinfaq', true);
             ?>
             <input type="text" class="infaq-cell-input widefat" data-field="_ketinfaq" value="<?php echo esc_attr($desc); ?>" />
+            <?php
+            break;
+        case 'tax_bulan': // Month Period
+            $terms = get_the_terms($post_id, 'bulan');
+            $current_val = ($terms && !is_wp_error($terms)) ? $terms[0]->term_id : '';
+            $all_terms = get_terms(array('taxonomy' => 'bulan', 'hide_empty' => false));
+            ?>
+            <select class="infaq-cell-input widefat" data-field="tax_bulan" style="max-width: 120px;">
+                <option value="">-</option>
+                <?php foreach ($all_terms as $term) : ?>
+                    <option value="<?php echo $term->term_id; ?>" <?php selected($current_val, $term->term_id); ?>><?php echo $term->name; ?></option>
+                <?php endforeach; ?>
+            </select>
+            <?php
+            break;
+        case 'tax_tahun': // Year Period
+            $terms = get_the_terms($post_id, 'tahun');
+            $current_val = ($terms && !is_wp_error($terms)) ? $terms[0]->term_id : '';
+            $all_terms = get_terms(array('taxonomy' => 'tahun', 'hide_empty' => false, 'orderby' => 'name', 'order' => 'DESC'));
+            ?>
+            <select class="infaq-cell-input widefat" data-field="tax_tahun" style="max-width: 80px;">
+                <option value="">-</option>
+                <?php foreach ($all_terms as $term) : ?>
+                    <option value="<?php echo $term->term_id; ?>" <?php selected($current_val, $term->term_id); ?>><?php echo $term->name; ?></option>
+                <?php endforeach; ?>
+            </select>
+            <?php
+            break;
+        case 'tax_kategori': // Infaq Categories
+            $terms = get_the_terms($post_id, 'kat-infaq');
+            $current_val = ($terms && !is_wp_error($terms)) ? $terms[0]->term_id : '';
+            $all_terms = get_terms(array('taxonomy' => 'kat-infaq', 'hide_empty' => false));
+            ?>
+            <select class="infaq-cell-input widefat" data-field="tax_kategori" style="max-width: 120px;">
+                <option value="">-</option>
+                <?php foreach ($all_terms as $term) : ?>
+                    <option value="<?php echo $term->term_id; ?>" <?php selected($current_val, $term->term_id); ?>><?php echo $term->name; ?></option>
+                <?php endforeach; ?>
+            </select>
             <?php
             break;
     }
@@ -358,13 +400,22 @@ function enqueue_infaq_quick_edit_script($hook) {
                 border: 1px solid #ccc; 
                 box-shadow: none; 
                 background: transparent;
-                min_width: 100px;
+                min_width: 80px;
+                padding: 0 5px;
+                height: 28px;
+                line-height: 28px;
             }
             .infaq-cell-input:focus {
                 border-color: #007cba;
                 background: #fff;
                 box-shadow: 0 0 0 1px #007cba;
             }
+            .column-infaq_status { width: 100px; }
+            .column-infaq_date { width: 140px; }
+            .column-infaq_amount { width: 130px; }
+            .column-tax_bulan { width: 130px; }
+            .column-tax_tahun { width: 90px; }
+            .column-tax_kategori { width: 130px; }
         ');
     }
 }
@@ -382,12 +433,31 @@ function wm_save_infaq_cell() {
     $value   = sanitize_text_field($_POST['value']);
     
     // Allowed fields
-    $allowed_fields = array('_status', '_tanginfaq', '_juminfaq', '_asalinfaq', '_ketinfaq');
-    if (!in_array($field, $allowed_fields)) {
-        wp_send_json_error('Invalid field');
-    }
+    $allowed_meta = array('_status', '_tanginfaq', '_juminfaq', '_asalinfaq', '_ketinfaq');
+    $allowed_tax  = array('tax_bulan', 'tax_tahun', 'tax_kategori');
     
-    update_post_meta($post_id, $field, $value);
+    if (in_array($field, $allowed_meta)) {
+        update_post_meta($post_id, $field, $value);
+    } elseif (in_array($field, $allowed_tax)) {
+        // Map field name to actual taxonomy
+        $tax_map = array(
+            'tax_bulan' => 'bulan',
+            'tax_tahun' => 'tahun',
+            'tax_kategori' => 'kat-infaq'
+        );
+        
+        $taxonomy = $tax_map[$field];
+        
+        if (!empty($value)) {
+            $term_id = intval($value);
+            wp_set_object_terms($post_id, array($term_id), $taxonomy);
+        } else {
+            // If value is empty, remove terms
+            wp_set_object_terms($post_id, array(), $taxonomy);
+        }
+    } else {
+         wp_send_json_error('Invalid field');
+    }
     
     // Invalidate cache if exists (from functions.php)
     if (function_exists('wm_invalidate_infaq_cache')) {

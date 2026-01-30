@@ -147,6 +147,16 @@
 				    								<div class="dana__date"><?php echo date_i18n("d M Y", strtotime($tanginfaq)); ?></div>
 				    							<?php } ?>
 				    						</td>
+											<td class="dana__categori" style="width: 20%; text-align: right;">
+												<?php
+													$terms = get_the_terms($post->ID, 'kat-infaq');
+													if ($terms && !is_wp_error($terms)) {
+														foreach ($terms as $term) {
+															echo '<a href="' . esc_url(get_term_link($term)) . '" class="infaq-category-pill">' . esc_html($term->name) . '</a> ';
+														}
+													}
+												?>
+											</td>
 				    					</tr>
 						
 				    			    	<?php 

@@ -567,3 +567,21 @@ a {
 	outline: 2px solid #098;
 	outline-offset: 2px;
 }
+/* Infaq Category Pill */
+.infaq-category-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    background-color: #e0f2f1;
+    color: #00695c;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.infaq-category-pill:hover {
+    background-color: #b2dfdb;
+    color: #004d40;
+}

@@ -104,7 +104,7 @@ function export_infaq_page() {
         <h2><?php echo __('Export Report (CSV)', 'wp-masjid'); ?></h2>
         <form method="post">
             <input type="hidden" name="export_infaq" value="true" />
-            <?php submit_button('Export'); ?>
+            <?php submit_button(__('Export', 'wp-masjid')); ?>
         </form>
     </div>
     <?php
@@ -119,12 +119,18 @@ function export_infaq() {
         $posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_type = 'infaq' AND post_status = 'publish'");
 
         if ($posts) {
-			$fields = ['ID', 'Title', 'Publish', 'Status', 'Date', 'Amount', 'City', 'Desc', 'Month', 'Year'];
-			$csv_output = implode(',', array_map(function($field) {
-				return in_array($field, ['Date', 'Amount', 'City', 'Desc', 'Month', 'Year']) 
-				? __($field, 'wp-masjid') 
-				: $field;
-			}, $fields)) . "\n";
+			$csv_output = implode(',', [
+				'ID',
+				'Title',
+				'Publish',
+				'Status',
+				__('Date', 'wp-masjid'),
+				__('Amount', 'wp-masjid'),
+				__('City', 'wp-masjid'),
+				__('Desc', 'wp-masjid'),
+				__('Month', 'wp-masjid'),
+				__('Year', 'wp-masjid')
+			]) . "\n";
 
             foreach ($posts as $post) {
                 $post_id = $post->ID;
@@ -191,7 +197,7 @@ function import_infaq_page() {
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="csv_file" accept=".csv" />
             <br />
-            <?php submit_button('Import'); ?>
+            <?php submit_button(__('Import', 'wp-masjid')); ?>
         </form>
     </div>
     <?php

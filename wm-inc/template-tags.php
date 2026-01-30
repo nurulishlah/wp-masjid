@@ -259,7 +259,7 @@ if ( ! function_exists( 'wm_nama_masjid' ) ) :
 		if ( get_theme_mod('nama_masjid') != "" ) {
 	    	echo get_theme_mod( 'nama_masjid'); 
 		} else {
-			echo 'Masjid At-Taqwa';
+			echo __('Masjid At-Taqwa', 'wp-masjid');
 		}
 	}
 endif;
@@ -348,7 +348,7 @@ if ( ! function_exists( 'wm_alamat_masjid' ) ) :
 		if ( get_theme_mod('alamat') != "" ) {
 	    	echo get_theme_mod( 'alamat'); 
 		} else {
-			echo 'Jl Raya Lintas Liwa, Wonosari II, Simpang Sari, Sumber Jaya, Lampung Barat';
+			echo __('Jl Raya Lintas Liwa, Wonosari II, Simpang Sari, Sumber Jaya, Lampung Barat', 'wp-masjid');
 		}
 	}
 endif;
@@ -362,13 +362,13 @@ if ( ! function_exists( 'wm_telp_masjid' ) ) :
 	    	if ( get_theme_mod('masjid_telpon') != "" ) {
 	        	echo '<a href="tel:' .get_theme_mod( 'masjid_telpon'). '"><span class="call__icon"><i class="icon-wm-phone"></i></span><span class="call__span">' .get_theme_mod( 'masjid_telpon'). '</span></a>'; 
 	    	} else {
-	    		echo '<a href="tel:"><span class="call__icon"><i class="icon-wm-phone"></i></span><span class="call__span">08123456789</span></a>';
+	    		echo '<a href="tel:"><span class="call__icon"><i class="icon-wm-phone"></i></span><span class="call__span">' . __('08123456789', 'wp-masjid') . '</span></a>';
 	    	}
 		} else {
 			if ( get_theme_mod('masjid_telpon') != "" ) {
 	        	echo '<a href="tel:' .get_theme_mod( 'masjid_telpon'). '">' .get_theme_mod( 'masjid_telpon'). '</a>'; 
 	    	} else {
-	    		echo '<a href="tel:">08123456789</a>';
+	    		echo '<a href="tel:">' . __('08123456789', 'wp-masjid') . '</a>';
 	    	}
 		}
 	}
@@ -509,9 +509,17 @@ if ( ! function_exists( 'text_footer' ) ) :
 		if ( get_theme_mod('wm_footer') != "" ) {
 	    	echo get_theme_mod('wm_footer');
 		} else {
-			echo 'This website use <a href="' . esc_url('https://wordpress.org') . '">WordPress</a> and WP Masjid theme';
+			printf( 
+				/* translators: %s: WordPress link */
+				__( 'This website use %s and WP Masjid theme', 'wp-masjid' ), 
+				'<a href="' . esc_url('https://wordpress.org') . '">WordPress</a>' 
+			);
 		}
-		echo ' Supported by <a href="' . esc_url('https://ciuss.com') . '">Ciuss Creative</a>';
+		printf( 
+			/* translators: %s: Ciuss Creative link */
+			__( ' Supported by %s', 'wp-masjid' ), 
+			'<a href="' . esc_url('https://ciuss.com') . '">Ciuss Creative</a>' 
+		);
 	}
 endif;
 

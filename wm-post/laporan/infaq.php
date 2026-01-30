@@ -348,7 +348,7 @@ function custom_infaq_column($column, $post_id) {
             $current_val = ($terms && !is_wp_error($terms)) ? $terms[0]->term_id : '';
             $all_terms = get_terms(array('taxonomy' => 'bulan', 'hide_empty' => false));
             ?>
-            <select class="infaq-cell-input widefat" data-field="tax_bulan" style="max-width: 120px;">
+            <select class="infaq-cell-input widefat" data-field="tax_bulan" style="max-width: 130px;">
                 <option value="">-</option>
                 <?php foreach ($all_terms as $term) : ?>
                     <option value="<?php echo $term->term_id; ?>" <?php selected($current_val, $term->term_id); ?>><?php echo $term->name; ?></option>
@@ -361,7 +361,7 @@ function custom_infaq_column($column, $post_id) {
             $current_val = ($terms && !is_wp_error($terms)) ? $terms[0]->term_id : '';
             $all_terms = get_terms(array('taxonomy' => 'tahun', 'hide_empty' => false, 'orderby' => 'name', 'order' => 'DESC'));
             ?>
-            <select class="infaq-cell-input widefat" data-field="tax_tahun" style="max-width: 80px;">
+            <select class="infaq-cell-input widefat" data-field="tax_tahun" style="max-width: 120px;">
                 <option value="">-</option>
                 <?php foreach ($all_terms as $term) : ?>
                     <option value="<?php echo $term->term_id; ?>" <?php selected($current_val, $term->term_id); ?>><?php echo $term->name; ?></option>

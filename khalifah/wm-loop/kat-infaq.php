@@ -7,12 +7,20 @@
 					    	<div class="saldo__lap">
 						        <?php
 								    
+									$queried_object = get_queried_object();
 							    	$argu = array(
 								    	'post_type'      => 'infaq',
 										'meta_query'     => array(
 									    	array(
 										    	'key'     => '_status',
 												'compare' => 'EXISTS',
+											),
+										),
+										'tax_query' => array(
+											array(
+												'taxonomy' => 'kat-infaq',
+												'field'    => 'term_id',
+												'terms'    => $queried_object->term_id,
 											),
 										),
 										'posts_per_page' => -1,

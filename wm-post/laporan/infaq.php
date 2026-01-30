@@ -286,3 +286,102 @@ function import_infaq() {
         }
     }
 }
+
+// --- Custom Columns & Quick Edit for Infaq ---
+
+add_filter('manage_infaq_posts_columns', 'set_custom_edit_infaq_columns');
+function set_custom_edit_infaq_columns($columns) {
+    $new_columns = array();
+    $new_columns['cb'] = $columns['cb'];
+    $new_columns['title'] = $columns['title'];
+    $new_columns['infaq_status'] = __('Status', 'wp-masjid');
+    $new_columns['infaq_date'] = __('Date', 'wp-masjid');
+    $new_columns['infaq_amount'] = __('Amount', 'wp-masjid');
+    $new_columns['infaq_from'] = __('From', 'wp-masjid');
+    $new_columns['infaq_desc'] = __('Description', 'wp-masjid');
+    $new_columns['date'] = $columns['date']; 
+    
+    return $new_columns;
+}
+
+add_action('manage_infaq_posts_custom_column', 'custom_infaq_column', 10, 2);
+function custom_infaq_column($column, $post_id) {
+    switch ($column) {
+        case 'infaq_status':
+            $status = get_post_meta($post_id, '_status', true);
+            $label = ($status == 'masuk') ? __('Funds Received', 'wp-masjid') : (($status == 'keluar') ? __('Funds Disbursed', 'wp-masjid') : $status);
+            echo esc_html($label);
+            echo '<span class="hidden infaq_status_value">' . esc_attr($status) . '</span>';
+            break;
+        case 'infaq_date':
+            $date = get_post_meta($post_id, '_tanginfaq', true);
+            echo esc_html($date);
+            echo '<span class="hidden infaq_date_value">' . esc_attr($date) . '</span>';
+            break;
+        case 'infaq_amount':
+            $amount = get_post_meta($post_id, '_juminfaq', true);
+            echo esc_html($amount);
+            echo '<span class="hidden infaq_amount_value">' . esc_attr($amount) . '</span>';
+            break;
+        case 'infaq_from':
+            $from = get_post_meta($post_id, '_asalinfaq', true);
+            echo esc_html($from);
+            echo '<span class="hidden infaq_from_value">' . esc_attr($from) . '</span>';
+            break;
+        case 'infaq_desc':
+            $desc = get_post_meta($post_id, '_ketinfaq', true);
+            echo esc_html($desc);
+            echo '<span class="hidden infaq_desc_value">' . esc_attr($desc) . '</span>';
+            break;
+    }
+}
+
+add_action('quick_edit_custom_box', 'display_custom_quick_edit_infaq', 10, 2);
+function display_custom_quick_edit_infaq($column_name, $post_type) {
+    if ($post_type != 'infaq' || $column_name != 'infaq_status') return; 
+
+    wp_nonce_field( plugin_basename(__FILE__), 'infaqmeta_noncename' );
+    ?>
+    <fieldset class="inline-edit-col-left inline-edit-infaq">
+        <div class="inline-edit-col">
+            <span class="title"><?php _e('Infaq Details', 'wp-masjid'); ?></span>
+            
+            <label>
+                <span class="title"><?php _e('Status', 'wp-masjid'); ?></span>
+                <select name="_status" class="infaq_status_input">
+                    <option value="masuk"><?php _e('Funds Received', 'wp-masjid'); ?></option>
+                    <option value="keluar"><?php _e('Funds Disbursed', 'wp-masjid'); ?></option>
+                </select>
+            </label>
+            
+            <label>
+                <span class="title"><?php _e('Date', 'wp-masjid'); ?></span>
+                <input type="date" name="_tanginfaq" class="infaq_date_input" />
+            </label>
+            
+            <label>
+                <span class="title"><?php _e('Amount', 'wp-masjid'); ?></span>
+                <input type="text" name="_juminfaq" class="infaq_amount_input" />
+            </label>
+            
+            <label>
+                <span class="title"><?php _e('From', 'wp-masjid'); ?></span>
+                <input type="text" name="_asalinfaq" class="infaq_from_input" />
+            </label>
+            
+            <label>
+                <span class="title"><?php _e('Description', 'wp-masjid'); ?></span>
+                <input type="text" name="_ketinfaq" class="infaq_desc_input" />
+            </label>
+        </div>
+    </fieldset>
+    <?php
+}
+
+add_action('admin_enqueue_scripts', 'enqueue_infaq_quick_edit_script');
+function enqueue_infaq_quick_edit_script($hook) {
+    global $post_type;
+    if ($hook == 'edit.php' && $post_type == 'infaq') {
+        wp_enqueue_script('admin-infaq-quick-edit', get_template_directory_uri() . '/wm-script/admin-infaq-quick-edit.js', array('jquery', 'inline-edit-post'), false, true);
+    }
+}

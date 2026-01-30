@@ -39,6 +39,19 @@
 						    		<td><strong><?php echo esc_html_e('Fund', 'wp-masjid'); ?></strong></td>
 						    		<td><?php echo esc_html( $status ); ?></td>
 					    		</tr>
+                                <tr>
+						    		<td><strong><?php echo esc_html_e('Category', 'wp-masjid'); ?></strong></td>
+						    		<td>
+                                        <?php
+                                            $terms = get_the_terms($post->ID, 'kat-infaq');
+                                            if ($terms && !is_wp_error($terms)) {
+                                                foreach ($terms as $term) {
+                                                    echo '<a href="' . esc_url(get_term_link($term)) . '" class="infaq-category-pill">' . esc_html($term->name) . '</a> ';
+                                                }
+                                            }
+                                        ?>
+                                    </td>
+					    		</tr>
 				                <tr>
 						        	<td><strong><?php echo esc_html_e('Name', 'wp-masjid'); ?></strong></td>
 					           	     <td><?php the_title(); ?></td>

@@ -32,6 +32,6 @@
          	?>
 			
 			<div class="ka__sholattime div__clear">
-   				<div class="wm__headspan"><span><?php echo esc_html( date_i18n('l, j F Y') ); ?></span></div>
+   				<div class="wm__headspan"><span><?php echo esc_html( date_i18n('l, j F Y') ); ?> / <?php echo esc_html( wm_get_hijri_date() ); ?></span></div>
 				<div class="wm__sholatwidget"><?php wm_city_prayer(); ?></div>
 			</div>

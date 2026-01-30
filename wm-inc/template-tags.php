@@ -568,3 +568,99 @@ function custom_css_to_head() {
 	echo '</style>';
 }
 add_action('wp_head', 'custom_css_to_head');
+
+if ( ! function_exists( 'wm_get_hijri_date' ) ) :
+	function wm_get_hijri_date( $date = null ) {
+		// Default to current date if not provided
+		if ( ! $date ) {
+			$date = current_time( 'timestamp' );
+		}
+		
+		$day   = date( 'j', $date );
+		$month = date( 'n', $date );
+		$year  = date( 'Y', $date );
+		
+		$m = $month;
+		$y = $year;
+		
+		if ( $m < 3 ) {
+			$y -= 1;
+			$m += 12;
+		}
+		
+		$a = floor( $y / 100 );
+		$b = 2 - $a + floor( $a / 4 );
+		
+		if ( $y < 1583 ) $b = 0;
+		if ( $y == 1582 ) {
+			if ( $m > 10 )  $b = -10;
+			if ( $m == 10 ) {
+				$b = 0;
+				if ( $day > 4 ) $b = -10;
+			}
+		}
+		
+		$jd = floor( 365.25 * ( $y + 4716 ) ) + floor( 30.6001 * ( $m + 1 ) ) + $day + $b - 1524;
+		
+		$b = 0;
+		if ( $jd > 2299160 ) {
+			$a = floor( ( $jd - 1867216.25 ) / 36524.25 );
+			$b = 1 + $a - floor( $a / 4 );
+		}
+		
+		$bb = $jd + $b + 1524;
+		$cc = floor( ( $bb - 122.1 ) / 365.25 );
+		$dd = floor( 365.25 * $cc );
+		$ee = floor( ( $bb - $dd ) / 30.6001 );
+		$day = ( $bb - $dd ) - floor( 30.6001 * $ee );
+		$month = $ee - 1;
+		
+		if ( $ee > 13 ) {
+			$cc += 1;
+			$month = $ee - 13;
+		}
+		
+		$year = $cc - 4716;
+		
+		$wd = ( ( ( $jd + 1 ) % 7 ) + 7 ) % 7 + 1;
+		
+		$iyear = 10631.0 / 30.0;
+		$epochastro = 1948084;
+		$epochcivil = 1948085;
+		
+		$shift1 = 8.01 / 60.0;
+		
+		$z = $jd - $epochastro;
+		$cyc = floor( $z / 10631.0 );
+		$z = $z - 10631.0 * $cyc;
+		$j = floor( ( $z - $shift1 ) / $iyear );
+		$iy = 30 * $cyc + $j;
+		$z = $z - floor( $j * $iyear + $shift1 );
+		$im = floor( ( $z + 28.5001 ) / 29.5 );
+		
+		if ( $im == 13 ) $im = 12;
+		
+		$id = $z - floor( 29.5001 * $im - 29 );
+		
+		$my_months = array( 
+			1 => __( 'Muharram', 'wp-masjid' ), 
+			2 => __( 'Safar', 'wp-masjid' ), 
+			3 => __( 'Rabi Al-Awwal', 'wp-masjid' ), 
+			4 => __( 'Rabi Al-Thani', 'wp-masjid' ), 
+			5 => __( 'Jumada Al-Awwal', 'wp-masjid' ), 
+			6 => __( 'Jumada Al-Thani', 'wp-masjid' ), 
+			7 => __( 'Rajab', 'wp-masjid' ), 
+			8 => __( "Sha'ban", 'wp-masjid' ), 
+			9 => __( 'Ramadan', 'wp-masjid' ), 
+			10 => __( 'Shawwal', 'wp-masjid' ), 
+			11 => __( 'Dhu Al-Qi\'dah', 'wp-masjid' ), 
+			12 => __( 'Dhu Al-Hijjah', 'wp-masjid' ) 
+		);
+		
+		// Correction: +1 day usually aligns better with visual calendars in some regions,
+		// but standard algorithm often needs regional adjustment.
+		// For now, we return standard calculation.
+		
+		return $id . ' ' . $my_months[$im] . ' ' . $iy . ' H';
+	}
+endif;

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Masjid\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 21:07+0700\n"
+"POT-Creation-Date: 2026-01-30 21:19+0700\n"
 "PO-Revision-Date: 2025-05-27 01:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
@@ -1332,6 +1332,54 @@ msgstr "Pengaturan tema WP Masjid"
 #, fuzzy, php-format
 msgid " Supported by %s"
 msgstr "Bantuan"
+
+#: wm-inc/template-tags.php:646
+msgid "Muharram"
+msgstr ""
+
+#: wm-inc/template-tags.php:647
+msgid "Safar"
+msgstr ""
+
+#: wm-inc/template-tags.php:648
+msgid "Rabi Al-Awwal"
+msgstr ""
+
+#: wm-inc/template-tags.php:649
+msgid "Rabi Al-Thani"
+msgstr ""
+
+#: wm-inc/template-tags.php:650
+msgid "Jumada Al-Awwal"
+msgstr ""
+
+#: wm-inc/template-tags.php:651
+msgid "Jumada Al-Thani"
+msgstr ""
+
+#: wm-inc/template-tags.php:652
+msgid "Rajab"
+msgstr ""
+
+#: wm-inc/template-tags.php:653
+msgid "Sha'ban"
+msgstr ""
+
+#: wm-inc/template-tags.php:654
+msgid "Ramadan"
+msgstr ""
+
+#: wm-inc/template-tags.php:655
+msgid "Shawwal"
+msgstr ""
+
+#: wm-inc/template-tags.php:656
+msgid "Dhu Al-Qi'dah"
+msgstr ""
+
+#: wm-inc/template-tags.php:657
+msgid "Dhu Al-Hijjah"
+msgstr ""
 
 #: wm-inc/back-compat.php:14 wm-inc/back-compat.php:19
 #: wm-inc/back-compat.php:27

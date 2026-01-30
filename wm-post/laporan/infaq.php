@@ -287,7 +287,7 @@ function import_infaq() {
     }
 }
 
-// --- Custom Columns & Quick Edit for Infaq ---
+// --- Custom Columns & Spreadsheet View for Infaq ---
 
 add_filter('manage_infaq_posts_columns', 'set_custom_edit_infaq_columns');
 function set_custom_edit_infaq_columns($columns) {
@@ -309,79 +309,90 @@ function custom_infaq_column($column, $post_id) {
     switch ($column) {
         case 'infaq_status':
             $status = get_post_meta($post_id, '_status', true);
-            $label = ($status == 'masuk') ? __('Funds Received', 'wp-masjid') : (($status == 'keluar') ? __('Funds Disbursed', 'wp-masjid') : $status);
-            echo esc_html($label);
-            echo '<span class="hidden infaq_status_value">' . esc_attr($status) . '</span>';
+            ?>
+            <select class="infaq-cell-input widefat" data-field="_status">
+                <option value="masuk" <?php selected($status, 'masuk'); ?>><?php _e('Received', 'wp-masjid'); ?></option>
+                <option value="keluar" <?php selected($status, 'keluar'); ?>><?php _e('Disbursed', 'wp-masjid'); ?></option>
+            </select>
+            <?php
             break;
         case 'infaq_date':
             $date = get_post_meta($post_id, '_tanginfaq', true);
-            echo esc_html($date);
-            echo '<span class="hidden infaq_date_value">' . esc_attr($date) . '</span>';
+            ?>
+            <input type="date" class="infaq-cell-input widefat" data-field="_tanginfaq" value="<?php echo esc_attr($date); ?>" />
+            <?php
             break;
         case 'infaq_amount':
             $amount = get_post_meta($post_id, '_juminfaq', true);
-            echo esc_html($amount);
-            echo '<span class="hidden infaq_amount_value">' . esc_attr($amount) . '</span>';
+            ?>
+            <input type="text" class="infaq-cell-input widefat" data-field="_juminfaq" value="<?php echo esc_attr($amount); ?>" />
+            <?php
             break;
         case 'infaq_from':
             $from = get_post_meta($post_id, '_asalinfaq', true);
-            echo esc_html($from);
-            echo '<span class="hidden infaq_from_value">' . esc_attr($from) . '</span>';
+            ?>
+            <input type="text" class="infaq-cell-input widefat" data-field="_asalinfaq" value="<?php echo esc_attr($from); ?>" />
+            <?php
             break;
         case 'infaq_desc':
             $desc = get_post_meta($post_id, '_ketinfaq', true);
-            echo esc_html($desc);
-            echo '<span class="hidden infaq_desc_value">' . esc_attr($desc) . '</span>';
+            ?>
+            <input type="text" class="infaq-cell-input widefat" data-field="_ketinfaq" value="<?php echo esc_attr($desc); ?>" />
+            <?php
             break;
     }
-}
-
-add_action('quick_edit_custom_box', 'display_custom_quick_edit_infaq', 10, 2);
-function display_custom_quick_edit_infaq($column_name, $post_type) {
-    if ($post_type != 'infaq' || $column_name != 'infaq_status') return; 
-
-    wp_nonce_field( plugin_basename(__FILE__), 'infaqmeta_noncename' );
-    ?>
-    <fieldset class="inline-edit-col-left inline-edit-infaq">
-        <div class="inline-edit-col">
-            <span class="title"><?php _e('Infaq Details', 'wp-masjid'); ?></span>
-            
-            <label>
-                <span class="title"><?php _e('Status', 'wp-masjid'); ?></span>
-                <select name="_status" class="infaq_status_input">
-                    <option value="masuk"><?php _e('Funds Received', 'wp-masjid'); ?></option>
-                    <option value="keluar"><?php _e('Funds Disbursed', 'wp-masjid'); ?></option>
-                </select>
-            </label>
-            
-            <label>
-                <span class="title"><?php _e('Date', 'wp-masjid'); ?></span>
-                <input type="date" name="_tanginfaq" class="infaq_date_input" />
-            </label>
-            
-            <label>
-                <span class="title"><?php _e('Amount', 'wp-masjid'); ?></span>
-                <input type="text" name="_juminfaq" class="infaq_amount_input" />
-            </label>
-            
-            <label>
-                <span class="title"><?php _e('From', 'wp-masjid'); ?></span>
-                <input type="text" name="_asalinfaq" class="infaq_from_input" />
-            </label>
-            
-            <label>
-                <span class="title"><?php _e('Description', 'wp-masjid'); ?></span>
-                <input type="text" name="_ketinfaq" class="infaq_desc_input" />
-            </label>
-        </div>
-    </fieldset>
-    <?php
 }
 
 add_action('admin_enqueue_scripts', 'enqueue_infaq_quick_edit_script');
 function enqueue_infaq_quick_edit_script($hook) {
     global $post_type;
     if ($hook == 'edit.php' && $post_type == 'infaq') {
-        wp_enqueue_script('admin-infaq-quick-edit', get_template_directory_uri() . '/wm-script/admin-infaq-quick-edit.js', array('jquery', 'inline-edit-post'), false, true);
+        wp_enqueue_script('admin-infaq-quick-edit', get_template_directory_uri() . '/wm-script/admin-infaq-quick-edit.js', array('jquery'), false, true);
+        wp_localize_script('admin-infaq-quick-edit', 'wm_infaq_vars', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce'    => wp_create_nonce('wm_infaq_nonce')
+        ));
+        // Add some basic CSS for the inputs
+        wp_add_inline_style('admin-infaq-quick-edit', '
+            .infaq-cell-input { 
+                border: 1px solid #ccc; 
+                box-shadow: none; 
+                background: transparent;
+                min_width: 100px;
+            }
+            .infaq-cell-input:focus {
+                border-color: #007cba;
+                background: #fff;
+                box-shadow: 0 0 0 1px #007cba;
+            }
+        ');
     }
+}
+
+add_action('wp_ajax_wm_save_infaq_cell', 'wm_save_infaq_cell');
+function wm_save_infaq_cell() {
+    check_ajax_referer('wm_infaq_nonce', 'nonce');
+    
+    if (!current_user_can('edit_infaq', $_POST['post_id']) && !current_user_can('edit_posts')) {
+        wp_send_json_error('Permission denied');
+    }
+    
+    $post_id = intval($_POST['post_id']);
+    $field   = sanitize_text_field($_POST['field']);
+    $value   = sanitize_text_field($_POST['value']);
+    
+    // Allowed fields
+    $allowed_fields = array('_status', '_tanginfaq', '_juminfaq', '_asalinfaq', '_ketinfaq');
+    if (!in_array($field, $allowed_fields)) {
+        wp_send_json_error('Invalid field');
+    }
+    
+    update_post_meta($post_id, $field, $value);
+    
+    // Invalidate cache if exists (from functions.php)
+    if (function_exists('wm_invalidate_infaq_cache')) {
+        wm_invalidate_infaq_cache($post_id);
+    }
+    
+    wp_send_json_success();
 }
